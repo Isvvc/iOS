@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Efh-yr-etW">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Profile-->
+        <scene sceneID="KN7-z8-54b">
+            <objects>
+                <viewController id="Efh-yr-etW" customClass="ProfileViewController" customModule="Home_Chore_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6Am-aD-UaM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6TB-4U-pvH">
+                                <rect key="frame" x="20" y="64" width="87" height="41"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cSt-ph-S86">
+                                <rect key="frame" x="20" y="113" width="374" height="374"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="cSt-ph-S86" secondAttribute="height" multiplier="1:1" id="hpg-0E-gRL"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ijN-PY-Zkl">
+                                <rect key="frame" x="20" y="495" width="374" height="30"/>
+                                <state key="normal" title="Choose Picture"/>
+                                <connections>
+                                    <action selector="choosePictureTapped:" destination="Efh-yr-etW" eventType="touchUpInside" id="1Ih-bN-Ksw"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6TB-4U-pvH" firstAttribute="leading" secondItem="yR7-jd-O5k" secondAttribute="leading" constant="20" id="2rW-yz-Usj"/>
+                            <constraint firstItem="ijN-PY-Zkl" firstAttribute="top" secondItem="cSt-ph-S86" secondAttribute="bottom" constant="8" id="A3P-zb-2FC"/>
+                            <constraint firstItem="cSt-ph-S86" firstAttribute="top" secondItem="6TB-4U-pvH" secondAttribute="bottom" constant="8" id="FMH-Z0-4eo"/>
+                            <constraint firstItem="yR7-jd-O5k" firstAttribute="trailing" secondItem="cSt-ph-S86" secondAttribute="trailing" constant="20" id="JXf-0H-h8f"/>
+                            <constraint firstItem="ijN-PY-Zkl" firstAttribute="leading" secondItem="cSt-ph-S86" secondAttribute="leading" id="NG3-go-1QY"/>
+                            <constraint firstItem="ijN-PY-Zkl" firstAttribute="trailing" secondItem="cSt-ph-S86" secondAttribute="trailing" id="feH-ek-ny7"/>
+                            <constraint firstItem="cSt-ph-S86" firstAttribute="leading" secondItem="yR7-jd-O5k" secondAttribute="leading" constant="20" id="h2m-Sd-T6Q"/>
+                            <constraint firstItem="6TB-4U-pvH" firstAttribute="top" secondItem="yR7-jd-O5k" secondAttribute="top" constant="20" id="v0h-5N-Ccn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="yR7-jd-O5k"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Profile" id="iMv-df-i88"/>
+                    <connections>
+                        <outlet property="choosePictureButton" destination="ijN-PY-Zkl" id="w64-Q1-Xko"/>
+                        <outlet property="imageView" destination="cSt-ph-S86" id="i9p-tl-CbI"/>
+                        <outlet property="nameLabel" destination="6TB-4U-pvH" id="NCF-qj-4Hs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9du-w6-eKM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1166.6666666666667" y="-321.42857142857139"/>
+        </scene>
+    </scenes>
+</document>

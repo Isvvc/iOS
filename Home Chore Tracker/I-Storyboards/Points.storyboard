@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Q9G-Zz-EJF">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Points View Controller-->
+        <scene sceneID="U7c-Bk-idf">
+            <objects>
+                <viewController id="Q9G-Zz-EJF" customClass="PointsViewController" customModule="Home_Chore_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qRQ-Xt-vk0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="46" translatesAutoresizingMaskIntoConstraints="NO" id="Jqk-23-oEu">
+                                <rect key="frame" x="20" y="193.5" width="374" height="509"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StarPoints" translatesAutoresizingMaskIntoConstraints="NO" id="Uhk-SX-dg7">
+                                        <rect key="frame" x="67" y="0.0" width="240" height="240"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="pDZ-cS-rsK"/>
+                                            <constraint firstAttribute="width" secondItem="Uhk-SX-dg7" secondAttribute="height" multiplier="1:1" id="uKK-9t-7rM"/>
+                                        </constraints>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="33T-2s-Lwi">
+                                        <rect key="frame" x="67" y="286" width="240" height="223"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMk-Ub-eVN">
+                                                <rect key="frame" x="77.5" y="20" width="85" height="89"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="76"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="points earned" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HwZ-kY-8Vq">
+                                                <rect key="frame" x="20" y="117" width="200" height="86"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="200" id="5js-BE-c9C"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="HwZ-kY-8Vq" firstAttribute="centerX" secondItem="33T-2s-Lwi" secondAttribute="centerX" id="797-vG-zhc"/>
+                                            <constraint firstItem="HwZ-kY-8Vq" firstAttribute="top" secondItem="eMk-Ub-eVN" secondAttribute="bottom" constant="8" id="8fA-2p-RtR"/>
+                                            <constraint firstItem="eMk-Ub-eVN" firstAttribute="top" secondItem="33T-2s-Lwi" secondAttribute="top" constant="20" id="PoV-uc-AdW"/>
+                                            <constraint firstItem="eMk-Ub-eVN" firstAttribute="centerX" secondItem="33T-2s-Lwi" secondAttribute="centerX" id="ajj-va-dlA"/>
+                                            <constraint firstAttribute="bottom" secondItem="HwZ-kY-8Vq" secondAttribute="bottom" constant="20" id="mdN-dS-pVm"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Uhk-SX-dg7" firstAttribute="width" secondItem="33T-2s-Lwi" secondAttribute="width" id="s6J-0I-6z7"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Jqk-23-oEu" firstAttribute="centerY" secondItem="qRQ-Xt-vk0" secondAttribute="centerY" id="5ws-J8-iM0"/>
+                            <constraint firstItem="mSx-0B-e7W" firstAttribute="trailing" secondItem="Jqk-23-oEu" secondAttribute="trailing" constant="20" id="p0Y-ot-hdf"/>
+                            <constraint firstItem="Jqk-23-oEu" firstAttribute="leading" secondItem="mSx-0B-e7W" secondAttribute="leading" constant="20" id="tOP-ME-JvT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mSx-0B-e7W"/>
+                    </view>
+                    <connections>
+                        <outlet property="pointsContainerView" destination="33T-2s-Lwi" id="QXt-xv-Eg5"/>
+                        <outlet property="pointsEarnedLabel" destination="HwZ-kY-8Vq" id="4Kz-dd-Zx2"/>
+                        <outlet property="pointsLabel" destination="eMk-Ub-eVN" id="Vek-Vg-HDI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B7A-Fu-1Kk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="517" y="-346"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="StarPoints" width="612" height="792"/>
+    </resources>
+</document>
