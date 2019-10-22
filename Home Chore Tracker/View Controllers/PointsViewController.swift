@@ -12,13 +12,13 @@ class PointsViewController: UIViewController {
     
     // MARK: - Outlets
     
-    @IBOutlet weak var pointsLabel: UILabel!
-    @IBOutlet weak var pointsEarnedLabel: UILabel!
-    @IBOutlet weak var pointsContainerView: UIView!
+    @IBOutlet private weak var pointsLabel: UILabel!
+    @IBOutlet private weak var pointsEarnedLabel: UILabel!
+    @IBOutlet private weak var pointsContainerView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tabBarItem.selectedImage = tabBarItem.selectedImage?.withRenderingMode(.alwaysOriginal)
         updateViews()
     }
     
@@ -26,7 +26,7 @@ class PointsViewController: UIViewController {
     
     private func updateViews() {
         
-        let highlightColor = UIColor(red:0.86, green:0.59, blue:0.04, alpha:1.0)
+        let highlightColor = UIColor(red: 0.86, green: 0.59, blue: 0.04, alpha: 1.0)
         
         pointsContainerView.backgroundColor = highlightColor
         pointsContainerView.layer.cornerRadius = 10

@@ -12,7 +12,7 @@ class ChoreTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        tabBarItem.selectedImage = tabBarItem.selectedImage?.withRenderingMode(.alwaysOriginal)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -31,7 +31,6 @@ class ChoreTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return 0
     }
-
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChoreCell", for: indexPath)
@@ -40,7 +39,6 @@ class ChoreTableViewController: UITableViewController {
         return cell
     }
     
-
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -75,7 +73,6 @@ class ChoreTableViewController: UITableViewController {
         return true
     }
     */
-
     
     // MARK: - Navigation
 
@@ -83,13 +80,10 @@ class ChoreTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
         if segue.identifier == "ShowChoreDetailSegue" {
-            if let choreVC = segue.destination as? ChoreDetailViewController,
-                let indexPath = tableView.indexPathForSelectedRow {
-                
+//            if let choreVC = segue.destination as? ChoreDetailViewController,
+//                let indexPath = tableView.indexPathForSelectedRow {
 //                choreVC.chore =
 //                choreVC.choreController =
-            }
         }
-        
     }
 }

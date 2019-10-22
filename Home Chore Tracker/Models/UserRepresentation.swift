@@ -17,7 +17,7 @@ struct UserRepresentation: Codable {
     let role: [ChildRepresentation]
 }
 
-struct ChildRepresentation: Codable  {
+struct ChildRepresentation: Codable {
     let username: String
     let name: String
     let password: String
@@ -26,7 +26,7 @@ struct ChildRepresentation: Codable  {
     var chores: [ChoreRepresentation]
 }
 
-struct ChoreRepresentation: Codable  {
+struct ChoreRepresentation: Codable {
     var icon: String
     var label: String
     var pointValue: Int
