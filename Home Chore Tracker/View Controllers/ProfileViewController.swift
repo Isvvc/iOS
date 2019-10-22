@@ -11,6 +11,8 @@ import Photos
 
 class ProfileViewController: UIViewController {
     
+    let imageName = "profile.png"
+    
     // MARK: - Outlets
     
     @IBOutlet private weak var imageView: UIImageView!
@@ -64,6 +66,8 @@ class ProfileViewController: UIViewController {
         
         nameLabel.textColor = textColor
 
+        loadImage(imageName: imageName)
+        
         if imageView.image != nil {
             imageView.layer.borderColor = highlightColor.cgColor
             imageView.layer.borderWidth = 4
@@ -73,6 +77,29 @@ class ProfileViewController: UIViewController {
         choosePictureButton.setTitleColor(.white, for: .normal)
         choosePictureButton.layer.backgroundColor = highlightColor.cgColor
         choosePictureButton.layer.cornerRadius = 5
+    }
+    
+    // MARK: - Persistence
+    
+    func saveImage(imageName: String) {
+        let fileManager = FileManager.default
+        
+        let imagePath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(imageName)
+        
+        let image = imageView.image!
+        let data = image.pngData()
+        
+        fileManager.createFile(atPath: imagePath as String, contents: data, attributes: nil)
+    }
+    
+    func loadImage(imageName: String) {
+        let fileManager = FileManager.default
+        
+        let imagePath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(imageName)
+        
+        if fileManager.fileExists(atPath: imagePath) {
+            imageView.image = UIImage(contentsOfFile: imagePath)
+        }
     }
 }
 
@@ -86,6 +113,9 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
         guard let image = info[.originalImage] as? UIImage else { return }
         
         imageView.image = image
+        
+        saveImage(imageName: imageName)
+        
         updateViews()
     }
 }
