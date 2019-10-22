@@ -71,14 +71,14 @@ After creating a user, you may log in to the API using the same credentials as y
 
 ## Frameworks
 
-[SwiftLint](https://github.com/realm/SwiftLint)
+[SwiftLint](https://github.com/realm/SwiftLint)<br/>
 [Alamofire](https://github.com/Alamofire/Alamofire)
 
 ---
 
 ## Authors
-[Ciara Beitel](https://github.com/LadyBeitel)
-[Isaac Lyons](https://github.com/Isvvc)
+[Ciara Beitel](https://github.com/LadyBeitel)<br/>
+[Isaac Lyons](https://github.com/Isvvc)<br/>
 [Jerry Haaser](https://github.com/JerryHaaser)
 
 ---
