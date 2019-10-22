@@ -70,8 +70,8 @@ After creating a user, you may log in to the API using the same credentials as y
 --- 
 
 ## Authors
-Ciara Beitel
-Isaac Lyons 
+Ciara Beitel,
+Isaac Lyons, and
 Jerry Haaser
 
 ---
