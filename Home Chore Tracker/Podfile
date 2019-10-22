@@ -6,5 +6,6 @@ target 'Home Chore Tracker' do
   use_frameworks!
 
   pod 'SwiftLint'
+  pod 'Alamofire', '~> 5.0.0-rc.2'
 
 end
