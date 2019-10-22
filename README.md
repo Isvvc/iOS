@@ -16,7 +16,7 @@ Please fork and clone this repository.
 
 ## API Documentation
 
-The base URL for this API is https://dev-libs.herokuapp.com/
+The base URL for this API is https://home-chore-tracker88.herokuapp.com
 
 --- 
 
@@ -33,8 +33,11 @@ JSON should be POSTed in the following format:
 
 ``` JSON
 {
-    "username": "userOne",
-    "password": "password"
+    "familyNameID": TheBeitels"
+    "username": "CiaratheCodingQueen",
+    "name": "Ciara"
+    "password": "password123"
+    "role": "parent"
 }
 ```
 
@@ -55,8 +58,8 @@ After creating a user, you may log in to the API using the same credentials as y
 
 ``` JSON
 {
-    "username": "userOne",
-    "password": "password"
+    "username": "CiaratheCodingQueen",
+    "password": "password123"
 }
 ```
 
