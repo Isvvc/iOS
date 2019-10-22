@@ -10,10 +10,9 @@ import UIKit
 
 class ChoreTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var choreImageView: UIImageView!
-    @IBOutlet weak var choreNameLabel: UILabel!
-    @IBOutlet weak var pointsLabel: UILabel!
-    
+    @IBOutlet private weak var choreImageView: UIImageView!
+    @IBOutlet private weak var choreNameLabel: UILabel!
+    @IBOutlet private weak var pointsLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,8 +34,5 @@ class ChoreTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
-
 }

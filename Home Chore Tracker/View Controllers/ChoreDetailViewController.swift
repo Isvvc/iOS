@@ -10,16 +10,14 @@ import UIKit
 
 class ChoreDetailViewController: UIViewController {
     
-    
-    @IBOutlet weak var completedChoreLabel: UILabel!
-    @IBOutlet weak var choreImageView: UIImageView!
-    @IBOutlet weak var doneButton: UIButton!
-    @IBOutlet weak var messageTextView: UITextView!
-    
+    @IBOutlet private weak var completedChoreLabel: UILabel!
+    @IBOutlet private weak var choreImageView: UIImageView!
+    @IBOutlet private weak var doneButton: UIButton!
+    @IBOutlet private weak var messageTextView: UITextView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tabBarItem.selectedImage = tabBarItem.selectedImage?.withRenderingMode(.alwaysOriginal)
         updateViews()
     }
     
@@ -34,13 +32,11 @@ class ChoreDetailViewController: UIViewController {
         
         messageTextView.text = ""
         messageTextView.textColor = .white
-        messageTextView.layer.backgroundColor = (UIColor(displayP3Red: 5.0, green: 175.0, blue: 80.0, alpha: 1.0) as! CGColor)
+        messageTextView.layer.backgroundColor = CGColor(srgbRed: 5.0, green: 175.0, blue: 80.0, alpha: 1.0)
         
         doneButton.layer.cornerRadius = 4
-        doneButton.layer.backgroundColor = (UIColor(displayP3Red: 5.0, green: 175.0, blue: 80.0, alpha: 1.0) as! CGColor)
-        
+        doneButton.layer.backgroundColor = CGColor(srgbRed: 5.0, green: 175.0, blue: 80.0, alpha: 1.0)
     }
-    
     
     @IBAction func doneButtonPressed(_ sender: UIButton) {
         
@@ -49,8 +45,6 @@ class ChoreDetailViewController: UIViewController {
         present(alert, animated: true, completion: nil)
         
     }
-    
-    
 
     /*
     // MARK: - Navigation
@@ -61,5 +55,4 @@ class ChoreDetailViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
