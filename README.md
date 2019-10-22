@@ -33,10 +33,10 @@ JSON should be POSTed in the following format:
 
 ``` JSON
 {
-    "familyNameID": "TheBeitels"
+    "familyNameID": "TheBeitels",
     "username": "CiaratheCodingQueen",
-    "name": "Ciara"
-    "password": "password123"
+    "name": "Ciara",
+    "password": "password123",
     "role": "parent"
 }
 ```
