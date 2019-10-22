@@ -2,7 +2,7 @@
 //  ChoreTableViewController.swift
 //  Home Chore Tracker
 //
-//  Created by Ciara Beitel on 10/21/19.
+//  Created by Jerry Haaser on 10/21/19.
 //  Copyright © 2019 Lambda School. All rights reserved.
 //
 
@@ -12,12 +12,12 @@ class ChoreTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tableView.reloadData()
     }
 
     // MARK: - Table view data source
@@ -32,15 +32,14 @@ class ChoreTableViewController: UITableViewController {
         return 0
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ChoreCell", for: indexPath)
 
-        // Configure the cell...
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -58,7 +57,7 @@ class ChoreTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
     */
 
@@ -77,14 +76,20 @@ class ChoreTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
+        if segue.identifier == "ShowChoreDetailSegue" {
+            if let choreVC = segue.destination as? ChoreDetailViewController,
+                let indexPath = tableView.indexPathForSelectedRow {
+                
+//                choreVC.chore =
+//                choreVC.choreController =
+            }
+        }
+        
+    }
 }
