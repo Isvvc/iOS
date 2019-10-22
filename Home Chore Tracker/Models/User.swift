@@ -9,14 +9,14 @@
 import Foundation
 import UIKit
 
-struct User {
-    let id: UUID
-    let familyNameID: String
-    let username: String
-    let name: String
-    let password: String
-    let role: [Child]
-}
+//struct User {
+//    let id: UUID
+//    let familyNameID: String
+//    let username: String
+//    let name: String
+//    let password: String
+//    let role: [Child]
+//}
 
 struct Child {
     let username: String

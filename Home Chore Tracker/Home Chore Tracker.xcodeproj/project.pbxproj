@@ -17,6 +17,7 @@
 		590E4F1C235E2034008FD030 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590E4F1B235E2034008FD030 /* ProfileViewController.swift */; };
 		590E4F1E235E29B1008FD030 /* Points.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 590E4F1D235E29B1008FD030 /* Points.storyboard */; };
 		590E4F20235E42DD008FD030 /* PointsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590E4F1F235E42DC008FD030 /* PointsViewController.swift */; };
+		590E4F22235E656A008FD030 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590E4F21235E656A008FD030 /* TabViewController.swift */; };
 		77384067235E557E0035D18E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77384066235E557E0035D18E /* User.swift */; };
 		7738406A235E5B0E0035D18E /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77384069235E5B0E0035D18E /* CoreDataStack.swift */; };
 		7738406C235E5BC90035D18E /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7738406B235E5BC90035D18E /* UserController.swift */; };
@@ -40,6 +41,7 @@
 		590E4F1B235E2034008FD030 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		590E4F1D235E29B1008FD030 /* Points.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Points.storyboard; sourceTree = "<group>"; };
 		590E4F1F235E42DC008FD030 /* PointsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsViewController.swift; sourceTree = "<group>"; };
+		590E4F21235E656A008FD030 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		77384066235E557E0035D18E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		77384069235E5B0E0035D18E /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		7738406B235E5BC90035D18E /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				590E4F1F235E42DC008FD030 /* PointsViewController.swift */,
 				77384071235E6BE90035D18E /* ChoreTableViewController.swift */,
 				77384073235E6C2A0035D18E /* ChoreDetailViewController.swift */,
+				590E4F21235E656A008FD030 /* TabViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -245,6 +248,8 @@
 				590E4F05235E1BEB008FD030 /* SceneDelegate.swift in Sources */,
 				7738406E235E5DAD0035D18E /* UserRepresentation.swift in Sources */,
 				590E4F0D235E1BEB008FD030 /* Users.xcdatamodeld in Sources */,
+				590E4F22235E656A008FD030 /* TabViewController.swift in Sources */,
+				590E4F0D235E1BEB008FD030 /* Home_Chore_Tracker.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,7 +394,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Home Chore Tracker/Info.plist";
+				INFOPLIST_FILE = Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -406,7 +411,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Home Chore Tracker/Info.plist";
+				INFOPLIST_FILE = Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
