@@ -14,6 +14,10 @@ class ChoreDetailViewController: UIViewController {
     @IBOutlet private weak var choreImageView: UIImageView!
     @IBOutlet private weak var doneButton: UIButton!
     @IBOutlet private weak var messageTextView: UITextView!
+    
+    var user: UserRepresentation?
+    var child: ChildRepresentation?
+    let starImage = UIImage(named: "StarPoints")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +40,55 @@ class ChoreDetailViewController: UIViewController {
         
         doneButton.layer.cornerRadius = 4
         doneButton.layer.backgroundColor = CGColor(srgbRed: 5.0, green: 175.0, blue: 80.0, alpha: 1.0)
+        
+        
+        
+    }
+    
+    func starPoints() {
+        guard let child = child else { return }
+        
+        let points = child.pointsEarned
+        
+        switch points {
+        case 1:
+            points == 1
+            let iV = UIImageView(image: starImage)
+            iV.translatesAutoresizingMaskIntoConstraints = false
+            iV.centerXAnchor.constraint(equalTo: doneButton.centerXAnchor).isActive = true
+            iV.topAnchor.constraint(equalTo: doneButton.bottomAnchor, constant:  -8).isActive = true
+            view.addSubview(iV)
+        case 2:
+            points == 2
+            let iV = UIImageView(image: starImage)
+            let iV2 = UIImageView(image: starImage)
+            iV.translatesAutoresizingMaskIntoConstraints = false
+            iV2.translatesAutoresizingMaskIntoConstraints = false
+            iV.topAnchor.constraint(equalTo: doneButton.bottomAnchor, constant: -8).isActive = true
+            iV.leadingAnchor.constraint(equalTo: doneButton.centerXAnchor, constant: -8).isActive = true
+            iV.trailingAnchor.constraint(equalTo: doneButton.centerXAnchor).isActive = true
+            iV2.topAnchor.constraint(equalTo: doneButton.bottomAnchor, constant: -8).isActive = true
+            iV2.leadingAnchor.constraint(equalTo: doneButton.centerXAnchor).isActive = true
+            iV2.trailingAnchor.constraint(equalTo: doneButton.centerXAnchor, constant: 8).isActive = true
+            
+            
+        case 3:
+            points == 3
+            
+            
+            
+        case 4:
+            points == 4
+            
+            
+            
+        default:
+            points == 5
+            
+            
+            
+        }
+        
     }
     
     @IBAction func doneButtonPressed(_ sender: UIButton) {
