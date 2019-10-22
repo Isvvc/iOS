@@ -10,10 +10,19 @@ import UIKit
 
 class ChoreTableViewCell: UITableViewCell {
     
+    // MARK: - Properties
+    
+    let chore: Chore? = nil
+    let choreController: ChoreController? = nil
+    
+    // MARK: - Outlets
+    
     @IBOutlet private weak var choreImageView: UIImageView!
     @IBOutlet private weak var choreNameLabel: UILabel!
     @IBOutlet private weak var pointsLabel: UILabel!
 
+    // MARK: - Methods
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         

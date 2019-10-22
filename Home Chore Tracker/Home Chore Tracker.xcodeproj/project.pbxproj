@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,9 @@
 		590E4F12235E1BED008FD030 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 590E4F10235E1BED008FD030 /* LaunchScreen.storyboard */; };
 		590E4F1C235E2034008FD030 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590E4F1B235E2034008FD030 /* ProfileViewController.swift */; };
 		590E4F20235E42DD008FD030 /* PointsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590E4F1F235E42DC008FD030 /* PointsViewController.swift */; };
+		594BFF23235FB75B00F8A42C /* ChoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594BFF22235FB75B00F8A42C /* ChoreController.swift */; };
+		594BFF26235FB7D300F8A42C /* Chores.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 594BFF24235FB7D300F8A42C /* Chores.xcdatamodeld */; };
+		594BFF28235FB82500F8A42C /* Chore+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594BFF27235FB82400F8A42C /* Chore+Convenience.swift */; };
 		77384067235E557E0035D18E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77384066235E557E0035D18E /* User.swift */; };
 		7738406A235E5B0E0035D18E /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77384069235E5B0E0035D18E /* CoreDataStack.swift */; };
 		7738406E235E5DAD0035D18E /* UserRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7738406D235E5DAD0035D18E /* UserRepresentation.swift */; };
@@ -34,6 +37,9 @@
 		590E4F13235E1BED008FD030 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		590E4F1B235E2034008FD030 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		590E4F1F235E42DC008FD030 /* PointsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsViewController.swift; sourceTree = "<group>"; };
+		594BFF22235FB75B00F8A42C /* ChoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChoreController.swift; path = "View Controllers/ChoreController.swift"; sourceTree = SOURCE_ROOT; };
+		594BFF25235FB7D300F8A42C /* Chores.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Chores.xcdatamodel; sourceTree = "<group>"; };
+		594BFF27235FB82400F8A42C /* Chore+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Chore+Convenience.swift"; sourceTree = "<group>"; };
 		77384066235E557E0035D18E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		77384069235E5B0E0035D18E /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		7738406D235E5DAD0035D18E /* UserRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepresentation.swift; sourceTree = "<group>"; };
@@ -116,6 +122,8 @@
 				77384066235E557E0035D18E /* User.swift */,
 				77384069235E5B0E0035D18E /* CoreDataStack.swift */,
 				7738406D235E5DAD0035D18E /* UserRepresentation.swift */,
+				594BFF24235FB7D300F8A42C /* Chores.xcdatamodeld */,
+				594BFF27235FB82400F8A42C /* Chore+Convenience.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -123,6 +131,7 @@
 		77384063235E550E0035D18E /* Model Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				594BFF22235FB75B00F8A42C /* ChoreController.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -300,11 +309,14 @@
 				7738406A235E5B0E0035D18E /* CoreDataStack.swift in Sources */,
 				77384074235E6C2A0035D18E /* ChoreDetailViewController.swift in Sources */,
 				590E4F20235E42DD008FD030 /* PointsViewController.swift in Sources */,
+				594BFF26235FB7D300F8A42C /* Chores.xcdatamodeld in Sources */,
 				77384076235E6C520035D18E /* ChoreTableViewCell.swift in Sources */,
 				77384072235E6BE90035D18E /* ChoreTableViewController.swift in Sources */,
 				590E4F03235E1BEB008FD030 /* AppDelegate.swift in Sources */,
 				77384067235E557E0035D18E /* User.swift in Sources */,
 				590E4F1C235E2034008FD030 /* ProfileViewController.swift in Sources */,
+				594BFF23235FB75B00F8A42C /* ChoreController.swift in Sources */,
+				594BFF28235FB82500F8A42C /* Chore+Convenience.swift in Sources */,
 				590E4F05235E1BEB008FD030 /* SceneDelegate.swift in Sources */,
 				7738406E235E5DAD0035D18E /* UserRepresentation.swift in Sources */,
 			);
@@ -504,6 +516,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		594BFF24235FB7D300F8A42C /* Chores.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				594BFF25235FB7D300F8A42C /* Chores.xcdatamodel */,
+			);
+			currentVersion = 594BFF25235FB7D300F8A42C /* Chores.xcdatamodel */;
+			path = Chores.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 590E4EF7235E1BEB008FD030 /* Project object */;
 }
