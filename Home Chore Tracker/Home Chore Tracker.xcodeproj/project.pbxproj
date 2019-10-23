@@ -19,11 +19,14 @@
 		594BFF28235FB82500F8A42C /* Chore+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594BFF27235FB82400F8A42C /* Chore+Convenience.swift */; };
 		77384067235E557E0035D18E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77384066235E557E0035D18E /* User.swift */; };
 		7738406A235E5B0E0035D18E /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77384069235E5B0E0035D18E /* CoreDataStack.swift */; };
-		7738406E235E5DAD0035D18E /* UserRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7738406D235E5DAD0035D18E /* UserRepresentation.swift */; };
 		77384072235E6BE90035D18E /* ChoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77384071235E6BE90035D18E /* ChoreTableViewController.swift */; };
 		77384074235E6C2A0035D18E /* ChoreDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77384073235E6C2A0035D18E /* ChoreDetailViewController.swift */; };
 		77384076235E6C520035D18E /* ChoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77384075235E6C520035D18E /* ChoreTableViewCell.swift */; };
 		7738407A235F5BBD0035D18E /* Nunito-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 77384079235F5BBC0035D18E /* Nunito-ExtraBold.ttf */; };
+		77384086235FE3EC0035D18E /* ChoreRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77384085235FE3EC0035D18E /* ChoreRepresentation.swift */; };
+		7738408A235FE5ED0035D18E /* Bearer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77384089235FE5ED0035D18E /* Bearer.swift */; };
+		7738408C235FE6080035D18E /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7738408B235FE6080035D18E /* LoginResponse.swift */; };
+		7738408E235FE6590035D18E /* UserRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7738408D235FE6590035D18E /* UserRepresentation.swift */; };
 		B41D3101EBA3FF779EC33CA0 /* Pods_Home_Chore_Tracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4A25F9C62F2EBCABBBFC9AB /* Pods_Home_Chore_Tracker.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,11 +45,14 @@
 		594BFF27235FB82400F8A42C /* Chore+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Chore+Convenience.swift"; sourceTree = "<group>"; };
 		77384066235E557E0035D18E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		77384069235E5B0E0035D18E /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
-		7738406D235E5DAD0035D18E /* UserRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepresentation.swift; sourceTree = "<group>"; };
 		77384071235E6BE90035D18E /* ChoreTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreTableViewController.swift; sourceTree = "<group>"; };
 		77384073235E6C2A0035D18E /* ChoreDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreDetailViewController.swift; sourceTree = "<group>"; };
 		77384075235E6C520035D18E /* ChoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreTableViewCell.swift; sourceTree = "<group>"; };
 		77384079235F5BBC0035D18E /* Nunito-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraBold.ttf"; sourceTree = "<group>"; };
+		77384085235FE3EC0035D18E /* ChoreRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreRepresentation.swift; sourceTree = "<group>"; };
+		77384089235FE5ED0035D18E /* Bearer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bearer.swift; sourceTree = "<group>"; };
+		7738408B235FE6080035D18E /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		7738408D235FE6590035D18E /* UserRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepresentation.swift; sourceTree = "<group>"; };
 		8353C4A1FB60CF2C78F92821 /* Pods-Home Chore Tracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Home Chore Tracker.release.xcconfig"; path = "Target Support Files/Pods-Home Chore Tracker/Pods-Home Chore Tracker.release.xcconfig"; sourceTree = "<group>"; };
 		D4A25F9C62F2EBCABBBFC9AB /* Pods_Home_Chore_Tracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Home_Chore_Tracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED243A662005FBFC35E71823 /* Pods-Home Chore Tracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Home Chore Tracker.debug.xcconfig"; path = "Target Support Files/Pods-Home Chore Tracker/Pods-Home Chore Tracker.debug.xcconfig"; sourceTree = "<group>"; };
@@ -121,9 +127,12 @@
 			children = (
 				77384066235E557E0035D18E /* User.swift */,
 				77384069235E5B0E0035D18E /* CoreDataStack.swift */,
-				7738406D235E5DAD0035D18E /* UserRepresentation.swift */,
 				594BFF24235FB7D300F8A42C /* Chores.xcdatamodeld */,
 				594BFF27235FB82400F8A42C /* Chore+Convenience.swift */,
+				77384085235FE3EC0035D18E /* ChoreRepresentation.swift */,
+				77384089235FE5ED0035D18E /* Bearer.swift */,
+				7738408B235FE6080035D18E /* LoginResponse.swift */,
+				7738408D235FE6590035D18E /* UserRepresentation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -306,19 +315,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77384086235FE3EC0035D18E /* ChoreRepresentation.swift in Sources */,
 				7738406A235E5B0E0035D18E /* CoreDataStack.swift in Sources */,
 				77384074235E6C2A0035D18E /* ChoreDetailViewController.swift in Sources */,
 				590E4F20235E42DD008FD030 /* PointsViewController.swift in Sources */,
 				594BFF26235FB7D300F8A42C /* Chores.xcdatamodeld in Sources */,
+				7738408E235FE6590035D18E /* UserRepresentation.swift in Sources */,
 				77384076235E6C520035D18E /* ChoreTableViewCell.swift in Sources */,
 				77384072235E6BE90035D18E /* ChoreTableViewController.swift in Sources */,
 				590E4F03235E1BEB008FD030 /* AppDelegate.swift in Sources */,
 				77384067235E557E0035D18E /* User.swift in Sources */,
 				590E4F1C235E2034008FD030 /* ProfileViewController.swift in Sources */,
+				7738408A235FE5ED0035D18E /* Bearer.swift in Sources */,
 				594BFF23235FB75B00F8A42C /* ChoreController.swift in Sources */,
 				594BFF28235FB82500F8A42C /* Chore+Convenience.swift in Sources */,
 				590E4F05235E1BEB008FD030 /* SceneDelegate.swift in Sources */,
-				7738406E235E5DAD0035D18E /* UserRepresentation.swift in Sources */,
+				7738408C235FE6080035D18E /* LoginResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
