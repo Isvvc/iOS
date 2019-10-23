@@ -25,7 +25,7 @@
                         <segue destination="jsV-3w-ug5" kind="relationship" relationship="viewControllers" id="g95-kn-xLi"/>
                         <segue destination="dxv-lp-2K8" kind="relationship" relationship="viewControllers" id="1Va-m6-vq6"/>
                         <segue destination="nlh-kk-6Sn" kind="relationship" relationship="viewControllers" id="hJK-eA-BOZ"/>
-                        <segue destination="5LU-sr-Srj" kind="show" identifier="ShowLoginSegue" id="5n2-5e-V0k"/>
+                        <segue destination="5LU-sr-Srj" kind="presentation" identifier="ShowLoginSegue" id="5n2-5e-V0k"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fml-Vd-4yb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -35,41 +35,41 @@
         <!--Login View Controller-->
         <scene sceneID="Lk3-67-AJn">
             <objects>
-                <viewController id="5LU-sr-Srj" customClass="LoginViewController" customModule="Home_Chore_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="5LU-sr-Srj" customClass="LoginViewController" customModule="Home_Chore_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="t07-uk-OZZ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fWY-Sq-LRH">
-                                <rect key="frame" x="135" y="225.5" width="144" height="36"/>
+                                <rect key="frame" x="135" y="269.5" width="144" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" red="0.019607843137254902" green="0.33333333333333331" blue="0.58823529411764708" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jeq-4i-hoA">
-                                <rect key="frame" x="145" y="380.5" width="125" height="36"/>
+                                <rect key="frame" x="145" y="424.5" width="125" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" red="0.019607843140000001" green="0.33333333329999998" blue="0.58823529409999997" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0rc-2c-IFa">
-                                <rect key="frame" x="40" y="296.5" width="334" height="34"/>
+                                <rect key="frame" x="40" y="340.5" width="334" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="username"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ejJ-nJ-LG0">
-                                <rect key="frame" x="40" y="451.5" width="334" height="34"/>
+                                <rect key="frame" x="40" y="495.5" width="334" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="password"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chore Tracker  Please Sign In!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ZF-G9-zSU">
-                                <rect key="frame" x="81.5" y="70" width="251.5" height="95.5"/>
+                                <rect key="frame" x="81.5" y="114" width="251.5" height="95.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q0S-Ur-KDV">
-                                <rect key="frame" x="154.5" y="585.5" width="105" height="60"/>
+                                <rect key="frame" x="154.5" y="629.5" width="105" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <state key="normal" title="Log In">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

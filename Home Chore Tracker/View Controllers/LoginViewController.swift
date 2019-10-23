@@ -10,16 +10,18 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
-    @IBOutlet weak var choreLabel: UILabel!
-    @IBOutlet weak var userNameLabel: UILabel!
-    @IBOutlet weak var userNameTextField: UITextField!
-    @IBOutlet weak var passwordLabel: UILabel!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet private weak var choreLabel: UILabel!
+    @IBOutlet private weak var userNameLabel: UILabel!
+    @IBOutlet private weak var userNameTextField: UITextField!
+    @IBOutlet private weak var passwordLabel: UILabel!
+    @IBOutlet private weak var passwordTextField: UITextField!
+    @IBOutlet private weak var loginButton: UIButton!
     
     let orange = UIColor(red: 220.0, green: 150.0, blue: 10.0, alpha: 1.0)
     let blue = UIColor(red: 5.0, green: 85.0, blue: 150.0, alpha: 1.0)
     let green = UIColor(red: 5.0, green: 175.0, blue: 80.0, alpha: 1.0)
+    
+    let choreController = ChoreController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,13 +42,46 @@ class LoginViewController: UIViewController {
         
         loginButton.layer.backgroundColor = green.cgColor
         loginButton.layer.cornerRadius = 4
-        
-        
-        
+
     }
     
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
+        
+        guard let username = userNameTextField.text,
+            let password = passwordTextField.text,
+            !username.isEmpty,
+            !password.isEmpty else { return }
+        
+        choreController.signIn(username: username, password: password) { error in
+            if error != nil {
+                
+                DispatchQueue.main.async {
+                    let alert = UIAlertController(title: "Could not sign in", message: "There was an error signing in", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+                
+            } else {
+                
+                DispatchQueue.main.async {
+                    self.dismiss(animated: true, completion: nil)
+                    
+//                    self.dismiss(animated: true) {
+//
+//                        DispatchQueue.main.async {
+//                            let alert = UIAlertController(title: "Logged in", message: "You have successfully logged in!", preferredStyle: .alert)
+//                            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+//                            self.present(alert, animated: true, completion: nil)
+//                        }
+//
+//                    }
+                }
+                
+            }
+            
+        }
+        
     }
     
 
