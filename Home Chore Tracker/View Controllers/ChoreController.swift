@@ -52,12 +52,12 @@ class ChoreController {
                 fetchRequest.predicate = NSPredicate(format: "label IN %@", labelsToFetch)
                 let existingChores = try context.fetch(fetchRequest)
                 for chore in existingChores {
-                    guard let label = chore.label,
+                    guard let label = chore.choreLabel,
                     let representation = representationsByLabel[label] else { continue }
-                    chore.label = representation.label
-                    chore.icon = representation.icon
-                    chore.pointValue = Int16(representation.pointValue)
-                    chore.completed = representation.completed
+                    chore.choreLabel = representation.label
+                    chore.choreIcon = representation.icon
+                    chore.chorePointValue = Int16(representation.pointValue)
+                    chore.choreCompleted = representation.completed
                     choresToCreate.removeValue(forKey: label)
                 }
                 for representation in choresToCreate.values {
@@ -71,10 +71,10 @@ class ChoreController {
     }
     
     func updateChore(chore: Chore, completed: Bool) {
-        guard let icon = chore.icon,
-            let label = chore.label else { return }
-        chore.completed = completed
-        let choreRep = ChoreRepresentation(icon: icon, label: label, pointValue: chore.pointValue, completed: chore.completed)
+        guard let icon = chore.choreIcon,
+            let label = chore.choreLabel else { return }
+        chore.choreCompleted = completed
+        let choreRep = ChoreRepresentation(icon: icon, label: label, pointValue: chore.chorePointValue, completed: chore.choreCompleted)
         guard let baseURL = baseURL else { return }
         AF.request("\(baseURL)/chores", method: .put, parameters: choreRep, encoder: JSONParameterEncoder.default).validate().response { response in
                 debugPrint(response)

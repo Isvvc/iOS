@@ -12,8 +12,8 @@ class ChoreTableViewCell: UITableViewCell {
     
     // MARK: - Properties
     
-    let chore: Chore? = nil
-    let choreController: ChoreController? = nil
+    var chore: Chore?
+    var choreController: ChoreController?
     
     // MARK: - Outlets
     

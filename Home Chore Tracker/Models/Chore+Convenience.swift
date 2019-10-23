@@ -11,25 +11,25 @@ import CoreData
 
 extension Chore {
     var choreRepresentation: ChoreRepresentation? {
-        guard let icon = icon,
-            let label = label else { return nil }
+        guard let icon = choreIcon,
+            let label = choreLabel else { return nil }
 
-        return ChoreRepresentation(icon: icon, label: label, pointValue: pointValue, completed: completed)
+        return ChoreRepresentation(icon: icon, label: label, pointValue: chorePointValue, completed: choreCompleted)
     }
 
-    convenience init(icon: String, label: String, pointValue: Int16, completed: Bool, context: NSManagedObjectContext) {
+    convenience init(choreIcon: String, choreLabel: String, chorePointValue: Int16, choreCompleted: Bool, context: NSManagedObjectContext) {
         self.init(context: context)
-        self.icon = icon
-        self.label = label
-        self.pointValue = pointValue
-        self.completed = completed
+        self.choreIcon = choreIcon
+        self.choreLabel = choreLabel
+        self.chorePointValue = chorePointValue
+        self.choreCompleted = choreCompleted
     }
     
     @discardableResult convenience init?(choreRepresentation: ChoreRepresentation, context: NSManagedObjectContext) {
-        self.init(icon: choreRepresentation.icon,
-                  label: choreRepresentation.label,
-                  pointValue: choreRepresentation.pointValue,
-                  completed: choreRepresentation.completed,
+        self.init(choreIcon: choreRepresentation.icon,
+                  choreLabel: choreRepresentation.label,
+                  chorePointValue: choreRepresentation.pointValue,
+                  choreCompleted: choreRepresentation.completed,
                   context: context)
     }
 }
