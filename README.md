@@ -20,33 +20,6 @@ The base URL for this API is https://home-chore-tracker88.herokuapp.com
 
 --- 
 
-### Sign Up
-
-**Endpoint:** `/api/auth/register`
-
-**Method:** `POST`
-
-**Description:**
-Creates a user whose credentials can then be used to log in to the API.
-
-JSON should be POSTed in the following format: 
-
-``` JSON
-{
-    "familyNameID": "TheBeitels",
-    "username": "CiaratheCodingQueen",
-    "name": "Ciara",
-    "password": "password123",
-    "role": "parent"
-}
-```
-
-#### Success Response
-
-**Code:** `200 OK` or `201 OK`
-
---- 
-
 ### Log In
 
 **Endpoint:** `/api/auth/login`
