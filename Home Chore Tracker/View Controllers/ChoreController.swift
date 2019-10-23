@@ -12,13 +12,13 @@ import Alamofire
 
 class ChoreController {
     
-    init() {
-        
-    }
+//    init() {
+//
+//    }
     
-    #warning("Change the baseURL")
-//    let baseURL = URL(string: "https://home-chore-tracker88.herokuapp.com")
-    let baseURL = URL(string: "https://e7d8a490.ngrok.io")?.absoluteString
+    var bearer: Bearer?
+    
+    let baseURL = URL(string: "https://home-chore-tracker88.herokuapp.com")
     
     func getAllChores(completion: @escaping ([Chore]?) -> Void) {
         guard let baseURL = baseURL else { return }
@@ -80,5 +80,61 @@ class ChoreController {
                 debugPrint(response)
                 CoreDataStack.shared.save()
         }
+    }
+    
+    func signIn(username: String, password: String, completion: @escaping (Error?) -> Void) {
+        
+        guard let baseURL = baseURL else {
+            NSLog("Invalid base URL")
+            completion(NSError())
+            return
+        }
+        
+        let requestURL = baseURL
+            .appendingPathComponent("api")
+            .appendingPathComponent("auth")
+            .appendingPathComponent("login")
+        
+        var request = URLRequest(url: requestURL)
+        request.httpMethod = HTTPMethod.post.rawValue
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let login = ["username": username, "password": password]
+        
+        do {
+            let loginJSON = try JSONEncoder().encode(login)
+            request.httpBody = loginJSON
+        } catch {
+            NSLog("Error encoding login data: \(error)")
+            completion(error)
+            return
+        }
+        
+        URLSession.shared.dataTask(with: request) { data, _, error in
+            if let error = error {
+                NSLog("Error signing in: \(error)")
+                completion(error)
+                return
+            }
+            
+            guard let data = data else {
+                NSLog("No data returned from data task")
+                completion(NSError())
+                return
+            }
+            
+            do {
+                let loginResponse = try JSONDecoder().decode(LoginResponse.self, from: data)
+                let bearer = Bearer(token: loginResponse.token)
+                self.bearer = bearer
+            } catch {
+                NSLog("Error decoding login response: \(error)")
+                completion(error)
+                return
+            }
+            
+            completion(nil)
+        }.resume()
+        
     }
 }
