@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreGraphics
 
 class LoginViewController: UIViewController {
     
@@ -17,32 +18,47 @@ class LoginViewController: UIViewController {
     @IBOutlet private weak var passwordTextField: UITextField!
     @IBOutlet private weak var loginButton: UIButton!
     
-    let orange = UIColor(red: 220.0, green: 150.0, blue: 10.0, alpha: 1.0)
-    let blue = UIColor(red: 5.0, green: 85.0, blue: 150.0, alpha: 1.0)
-    let green = UIColor(red: 5.0, green: 175.0, blue: 80.0, alpha: 1.0)
+    let orange = UIColor(red:0.86, green:0.59, blue:0.04, alpha:1.0)
+    let blue = UIColor(red:0.02, green:0.33, blue:0.59, alpha:1.0)
+    let green = UIColor(red:0.02, green:0.69, blue:0.31, alpha:1.0)
     
     let choreController = ChoreController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        updateViews()
 
     }
     
     func updateViews() {
         
-        choreLabel.backgroundColor = green
-        choreLabel.layer.backgroundColor = green.cgColor
-        choreLabel.layer.cornerRadius = 4
-        choreLabel.textColor = .black
-        
-        userNameLabel.textColor = orange
-        
-        passwordLabel.textColor = orange
-        
-        loginButton.layer.backgroundColor = green.cgColor
-        loginButton.layer.cornerRadius = 4
+        addLabelBackground(theLabel: choreLabel)
+        addLabelBackground(theLabel: userNameLabel)
+        addLabelBackground(theLabel: passwordLabel)
+        addButtonBackground(theButton: loginButton)
 
+    }
+    
+    func addLabelBackground(theLabel: UILabel) {
+        let label = theLabel
+        view.addSubview(label)
+        label.textColor = .white
+        label.layer.borderColor = orange.cgColor
+        label.layer.borderWidth = 1
+        label.layer.backgroundColor = orange.cgColor
+        label.layer.cornerRadius = 4
+        
+    }
+    
+    func addButtonBackground(theButton: UIButton) {
+        let button = theButton
+        view.addSubview(button)
+        button.layer.borderColor = green.cgColor
+        button.layer.borderWidth = 1
+        button.layer.backgroundColor = green.cgColor
+        button.setTitleColor(.white, for: .normal)
+        button.layer.cornerRadius = 4
+    
     }
     
     
@@ -95,4 +111,19 @@ class LoginViewController: UIViewController {
     }
     */
 
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == userNameTextField {
+            textField.resignFirstResponder()
+            passwordTextField.becomeFirstResponder()
+            return true
+        } else if textField == passwordTextField {
+            textField.resignFirstResponder()
+            return true
+        } else {
+            return false
+        }
+    }
 }
