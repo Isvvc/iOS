@@ -10,6 +10,8 @@ import UIKit
 
 class PointsViewController: UIViewController {
     
+    var choreController: ChoreController!
+    
     // MARK: - Outlets
     
     @IBOutlet private weak var pointsLabel: UILabel!

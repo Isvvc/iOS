@@ -10,7 +10,7 @@ import UIKit
 
 class ChoreTableViewController: UITableViewController {
     
-    let choreController = ChoreController()
+    var choreController: ChoreController!
 
     override func viewDidLoad() {
         super.viewDidLoad()

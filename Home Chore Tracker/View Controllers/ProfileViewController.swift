@@ -13,6 +13,8 @@ class ProfileViewController: UIViewController {
     
     let imageName = "profile.png"
     
+    var choreController: ChoreController!
+    
     // MARK: - Outlets
     
     @IBOutlet private weak var imageView: UIImageView!
