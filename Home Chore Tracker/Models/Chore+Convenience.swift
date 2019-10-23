@@ -17,8 +17,9 @@ extension Chore {
         return ChoreRepresentation(choreIcon: icon, choreName: label, chorePointValue: chorePointValue, choreCompleted: choreCompleted, choreId: choreId)
     }
 
-    convenience init(choreIcon: String, choreLabel: String, chorePointValue: Int16, choreCompleted: Bool, context: NSManagedObjectContext) {
+    convenience init(choreId: Int16, choreIcon: String, choreLabel: String, chorePointValue: Int16, choreCompleted: Bool, context: NSManagedObjectContext) {
         self.init(context: context)
+        self.choreId = choreId
         self.choreIcon = choreIcon
         self.choreLabel = choreLabel
         self.chorePointValue = chorePointValue
@@ -26,7 +27,8 @@ extension Chore {
     }
     
     @discardableResult convenience init?(choreRepresentation: ChoreRepresentation, context: NSManagedObjectContext) {
-        self.init(choreIcon: choreRepresentation.choreIcon ?? "",
+        self.init(choreId: choreRepresentation.choreId,
+                  choreIcon: choreRepresentation.choreIcon ?? "",
                   choreLabel: choreRepresentation.choreName,
                   chorePointValue: choreRepresentation.chorePointValue,
                   choreCompleted: choreRepresentation.choreCompleted ?? false,

@@ -60,16 +60,21 @@ class ChoreTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ChoreCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ChoreCell", for: indexPath) as? ChoreTableViewCell else { return UITableViewCell() }
 
-
+        cell.chore = fetchedResultsController.object(at: indexPath)
+        
         return cell
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         guard let sectionInfo = fetchedResultsController.sections?[section] else { return nil }
         
-        return sectionInfo.name.capitalized
+        if sectionInfo.name == "0" {
+            return "Not completed"
+        } else {
+            return "Completed"
+        }
     }
     
     /*
