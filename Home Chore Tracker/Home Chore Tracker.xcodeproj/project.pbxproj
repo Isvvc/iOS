@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		590017B82360B5980059E69C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590017B72360B5980059E69C /* LoginViewController.swift */; };
+		590017BA2360B6F20059E69C /* ChoreTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590017B92360B6F20059E69C /* ChoreTabBarViewController.swift */; };
 		590E4F03235E1BEB008FD030 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590E4F02235E1BEB008FD030 /* AppDelegate.swift */; };
 		590E4F05235E1BEB008FD030 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590E4F04235E1BEB008FD030 /* SceneDelegate.swift */; };
 		590E4F0A235E1BEB008FD030 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 590E4F08235E1BEB008FD030 /* Main.storyboard */; };
@@ -31,6 +33,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		590017B72360B5980059E69C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		590017B92360B6F20059E69C /* ChoreTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreTabBarViewController.swift; sourceTree = "<group>"; };
 		590E4EFF235E1BEB008FD030 /* Home Chore Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Home Chore Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		590E4F02235E1BEB008FD030 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		590E4F04235E1BEB008FD030 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -160,6 +164,8 @@
 				590E4F1F235E42DC008FD030 /* PointsViewController.swift */,
 				77384071235E6BE90035D18E /* ChoreTableViewController.swift */,
 				77384073235E6C2A0035D18E /* ChoreDetailViewController.swift */,
+				590017B72360B5980059E69C /* LoginViewController.swift */,
+				590017B92360B6F20059E69C /* ChoreTabBarViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -315,6 +321,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				590017BA2360B6F20059E69C /* ChoreTabBarViewController.swift in Sources */,
 				77384086235FE3EC0035D18E /* ChoreRepresentation.swift in Sources */,
 				7738406A235E5B0E0035D18E /* CoreDataStack.swift in Sources */,
 				77384074235E6C2A0035D18E /* ChoreDetailViewController.swift in Sources */,
@@ -328,6 +335,7 @@
 				590E4F1C235E2034008FD030 /* ProfileViewController.swift in Sources */,
 				7738408A235FE5ED0035D18E /* Bearer.swift in Sources */,
 				594BFF23235FB75B00F8A42C /* ChoreController.swift in Sources */,
+				590017B82360B5980059E69C /* LoginViewController.swift in Sources */,
 				594BFF28235FB82500F8A42C /* Chore+Convenience.swift in Sources */,
 				590E4F05235E1BEB008FD030 /* SceneDelegate.swift in Sources */,
 				7738408C235FE6080035D18E /* LoginResponse.swift in Sources */,
