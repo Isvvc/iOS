@@ -14,7 +14,7 @@ extension Chore {
         guard let icon = choreIcon,
             let label = choreLabel else { return nil }
 
-        return ChoreRepresentation(icon: icon, label: label, pointValue: chorePointValue, completed: choreCompleted)
+        return ChoreRepresentation(choreIcon: icon, choreName: label, chorePointValue: chorePointValue, choreCompleted: choreCompleted, choreId: choreId)
     }
 
     convenience init(choreIcon: String, choreLabel: String, chorePointValue: Int16, choreCompleted: Bool, context: NSManagedObjectContext) {
@@ -26,10 +26,10 @@ extension Chore {
     }
     
     @discardableResult convenience init?(choreRepresentation: ChoreRepresentation, context: NSManagedObjectContext) {
-        self.init(choreIcon: choreRepresentation.icon,
-                  choreLabel: choreRepresentation.label,
-                  chorePointValue: choreRepresentation.pointValue,
-                  choreCompleted: choreRepresentation.completed,
+        self.init(choreIcon: choreRepresentation.choreIcon,
+                  choreLabel: choreRepresentation.choreName,
+                  chorePointValue: choreRepresentation.chorePointValue,
+                  choreCompleted: choreRepresentation.choreCompleted,
                   context: context)
     }
 }

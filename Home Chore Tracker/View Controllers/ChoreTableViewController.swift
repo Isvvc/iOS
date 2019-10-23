@@ -15,10 +15,6 @@ class ChoreTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tabBarItem.selectedImage = tabBarItem.selectedImage?.withRenderingMode(.alwaysOriginal)
-        
-        choreController.getAllChores { data in
-            print(data)
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

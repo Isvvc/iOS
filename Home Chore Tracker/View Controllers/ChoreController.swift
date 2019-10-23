@@ -41,7 +41,7 @@ class ChoreController {
     }
     
     func updateChores(with representations: [ChoreRepresentation]) {
-        let labelsToFetch = representations.compactMap({ $0.label })
+        let labelsToFetch = representations.compactMap({ $0.choreName })
         let representationsByLabel = Dictionary(uniqueKeysWithValues: zip(labelsToFetch, representations))
         var choresToCreate = representationsByLabel
         let context = CoreDataStack.shared.container.newBackgroundContext()
@@ -54,10 +54,10 @@ class ChoreController {
                 for chore in existingChores {
                     guard let label = chore.choreLabel,
                     let representation = representationsByLabel[label] else { continue }
-                    chore.choreLabel = representation.label
-                    chore.choreIcon = representation.icon
-                    chore.chorePointValue = Int16(representation.pointValue)
-                    chore.choreCompleted = representation.completed
+                    chore.choreLabel = representation.choreName
+                    chore.choreIcon = representation.choreIcon
+                    chore.chorePointValue = Int16(representation.chorePointValue)
+                    chore.choreCompleted = representation.choreCompleted
                     choresToCreate.removeValue(forKey: label)
                 }
                 for representation in choresToCreate.values {
@@ -74,7 +74,11 @@ class ChoreController {
         guard let icon = chore.choreIcon,
             let label = chore.choreLabel else { return }
         chore.choreCompleted = completed
-        let choreRep = ChoreRepresentation(icon: icon, label: label, pointValue: chore.chorePointValue, completed: chore.choreCompleted)
+        let choreRep = ChoreRepresentation(choreIcon: icon,
+                                           choreName: label,
+                                           chorePointValue: chore.chorePointValue,
+                                           choreCompleted: chore.choreCompleted,
+                                           choreId: chore.choreId)
         guard let baseURL = baseURL else { return }
         AF.request("\(baseURL)/chores", method: .put, parameters: choreRep, encoder: JSONParameterEncoder.default).validate().response { response in
                 debugPrint(response)
