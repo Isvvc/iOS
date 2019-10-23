@@ -1,5 +1,5 @@
 //
-//  UserRepresentation.swift
+//  LoginResponse.swift
 //  Home Chore Tracker
 //
 //  Created by Ciara Beitel on 10/22/19.
@@ -8,10 +8,7 @@
 
 import Foundation
 
-struct UserRepresentation: Codable {
-    let id: UUID
-    let familyNameID: String
+struct LoginResponse: Codable {
+    let token: String
     let username: String
-    let name: String
-    let password: String
 }
