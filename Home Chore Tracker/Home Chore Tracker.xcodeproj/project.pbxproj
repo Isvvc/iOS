@@ -35,6 +35,7 @@
 /* Begin PBXFileReference section */
 		590017B72360B5980059E69C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		590017B92360B6F20059E69C /* ChoreTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreTabBarViewController.swift; sourceTree = "<group>"; };
+		590017BB2360F01B0059E69C /* Chores 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Chores 2.xcdatamodel"; sourceTree = "<group>"; };
 		590E4EFF235E1BEB008FD030 /* Home Chore Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Home Chore Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		590E4F02235E1BEB008FD030 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		590E4F04235E1BEB008FD030 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -541,9 +542,10 @@
 		594BFF24235FB7D300F8A42C /* Chores.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				590017BB2360F01B0059E69C /* Chores 2.xcdatamodel */,
 				594BFF25235FB7D300F8A42C /* Chores.xcdatamodel */,
 			);
-			currentVersion = 594BFF25235FB7D300F8A42C /* Chores.xcdatamodel */;
+			currentVersion = 590017BB2360F01B0059E69C /* Chores 2.xcdatamodel */;
 			path = Chores.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
