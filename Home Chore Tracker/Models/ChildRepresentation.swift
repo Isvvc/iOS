@@ -1,5 +1,5 @@
 //
-//  UserRepresentation.swift
+//  ChildRepresentation.swift
 //  Home Chore Tracker
 //
 //  Created by Ciara Beitel on 10/22/19.
@@ -8,10 +8,11 @@
 
 import Foundation
 
-struct UserRepresentation: Codable {
-    let id: UUID
-    let familyNameID: String
+struct ChildRepresentation: Codable {
     let username: String
     let name: String
     let password: String
+    let familyNameID: String
+    var pointsEarned: Int
+    var chores: [ChoreRepresentation]
 }

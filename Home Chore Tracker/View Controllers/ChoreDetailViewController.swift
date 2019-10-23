@@ -16,7 +16,6 @@ class ChoreDetailViewController: UIViewController {
     @IBOutlet private weak var messageTextView: UITextView!
     
     var user: UserRepresentation?
-    var child: ChildRepresentation?
     let starImage = UIImage(named: "StarPoints")
 
     override func viewDidLoad() {
@@ -42,24 +41,24 @@ class ChoreDetailViewController: UIViewController {
         doneButton.layer.backgroundColor = CGColor(srgbRed: 5.0, green: 175.0, blue: 80.0, alpha: 1.0)
     }
     
-    func starPoints() {
-       guard let child = child else { return }
-       
-       let points = child.pointsEarned
-       
-       switch points {
-       case 1:
-           oneStar()
-       case 2:
-           twoStars()
-       case 3:
-           threeStars()
-       case 4:
-           fourStars()
-       default:
-           fiveStars()
-       }
-    }
+//    func starPoints() {
+//       guard let child = child else { return }
+//
+//       let points = child.pointsEarned
+//
+//       switch points {
+//       case 1:
+//           oneStar()
+//       case 2:
+//           twoStars()
+//       case 3:
+//           threeStars()
+//       case 4:
+//           fourStars()
+//       default:
+//           fiveStars()
+//       }
+//    }
     
     @IBAction func doneButtonPressed(_ sender: UIButton) {
         
@@ -86,7 +85,7 @@ extension ChoreDetailViewController {
         let iV = UIImageView(image: starImage)
         iV.translatesAutoresizingMaskIntoConstraints = false
         iV.centerXAnchor.constraint(equalTo: doneButton.centerXAnchor).isActive = true
-        iV.topAnchor.constraint(equalTo: doneButton.bottomAnchor, constant:  8).isActive = true
+        iV.topAnchor.constraint(equalTo: doneButton.bottomAnchor, constant: 8).isActive = true
         view.addSubview(iV)
     }
     
