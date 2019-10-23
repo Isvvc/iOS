@@ -15,7 +15,17 @@ class ChoreTabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if let viewControllers = viewControllers {
+            for vc in viewControllers {
+                if let choreTableVC = vc as? ChoreTableViewController {
+                    choreTableVC.choreController = choreController
+                } else if let profileVC = vc as? ProfileViewController {
+                    profileVC.choreController = choreController
+                } else if let pointsVC = vc as? PointsViewController {
+                    pointsVC.choreController = choreController
+                }
+            }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
