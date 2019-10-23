@@ -12,9 +12,11 @@ import Alamofire
 
 class ChoreController {
     
-//    init() {
-//
-//    }
+    init() {
+        fetchChoresFromServer()
+    }
+    
+    // MARK: - CC Networking
     
     var bearer: Bearer?
     
@@ -40,35 +42,35 @@ class ChoreController {
         }
     }
     
-    func updateChores(with representations: [ChoreRepresentation]) {
-        let labelsToFetch = representations.compactMap({ $0.choreName })
-        let representationsByLabel = Dictionary(uniqueKeysWithValues: zip(labelsToFetch, representations))
-        var choresToCreate = representationsByLabel
-        let context = CoreDataStack.shared.container.newBackgroundContext()
-        
-        context.performAndWait {
-            do {
-                let fetchRequest: NSFetchRequest<Chore> = Chore.fetchRequest()
-                fetchRequest.predicate = NSPredicate(format: "label IN %@", labelsToFetch)
-                let existingChores = try context.fetch(fetchRequest)
-                for chore in existingChores {
-                    guard let label = chore.choreLabel,
-                    let representation = representationsByLabel[label] else { continue }
-                    chore.choreLabel = representation.choreName
-                    chore.choreIcon = representation.choreIcon
-                    chore.chorePointValue = Int16(representation.chorePointValue)
-                    chore.choreCompleted = representation.choreCompleted
-                    choresToCreate.removeValue(forKey: label)
-                }
-                for representation in choresToCreate.values {
-                        Chore(choreRepresentation: representation, context: context)
-                    }
-                    CoreDataStack.shared.save(context: context)
-            } catch {
-                NSLog("Error fetching chores from persistent store: \(error)")
-            }
-        }
-    }
+//    func updateChores(with representations: [ChoreRepresentation]) {
+//        let labelsToFetch = representations.compactMap({ $0.choreName })
+//        let representationsByLabel = Dictionary(uniqueKeysWithValues: zip(labelsToFetch, representations))
+//        var choresToCreate = representationsByLabel
+//        let context = CoreDataStack.shared.container.newBackgroundContext()
+//
+//        context.performAndWait {
+//            do {
+//                let fetchRequest: NSFetchRequest<Chore> = Chore.fetchRequest()
+//                fetchRequest.predicate = NSPredicate(format: "label IN %@", labelsToFetch)
+//                let existingChores = try context.fetch(fetchRequest)
+//                for chore in existingChores {
+//                    guard let label = chore.choreLabel,
+//                    let representation = representationsByLabel[label] else { continue }
+//                    chore.choreLabel = representation.choreName
+//                    chore.choreIcon = representation.choreIcon
+//                    chore.chorePointValue = Int16(representation.chorePointValue)
+//                    chore.choreCompleted = representation.choreCompleted
+//                    choresToCreate.removeValue(forKey: label)
+//                }
+//                for representation in choresToCreate.values {
+//                        Chore(choreRepresentation: representation, context: context)
+//                    }
+//                    CoreDataStack.shared.save(context: context)
+//            } catch {
+//                NSLog("Error fetching chores from persistent store: \(error)")
+//            }
+//        }
+//    }
     
     func updateChore(chore: Chore, completed: Bool) {
         guard let icon = chore.choreIcon,
@@ -85,6 +87,8 @@ class ChoreController {
                 CoreDataStack.shared.save()
         }
     }
+    
+    // MARK: - Isaac Networking
     
     func signIn(username: String, password: String, completion: @escaping (Error?) -> Void) {
         
@@ -139,6 +143,86 @@ class ChoreController {
             
             completion(nil)
         }.resume()
+        
+    }
+    
+    func fetchChoresFromServer(completion: @escaping () -> Void = { }) {
+        guard let baseURL = baseURL else {
+            NSLog("Invalid base URL")
+            completion()
+            return
+        }
+        
+        let requestURL = baseURL
+            .appendingPathComponent("api")
+            .appendingPathComponent("chores")
+        
+        let request = URLRequest(url: requestURL)
+        
+        URLSession.shared.dataTask(with: request) { data, _, error in
+            if let error = error {
+                NSLog("Error fetching tasks: \(error)")
+                completion()
+                return
+            }
+            
+            guard let data = data else {
+                NSLog("No data returned from task fetch data task")
+                completion()
+                return
+            }
+            
+            do {
+                let chores = try JSONDecoder().decode([ChoreRepresentation].self, from: data)
+                self.updateChores(with: chores)
+            } catch {
+                NSLog("Error decoding TaskRepresentations: \(error)")
+            }
+            
+            completion()
+        }.resume()
+    }
+    
+    func updateChores(with representations: [ChoreRepresentation]) {
+        
+        let idsToFetch = representations.map({ $0.choreId })
+        
+        let representationsByID = Dictionary(uniqueKeysWithValues: zip(idsToFetch, representations))
+        
+        var choresToCreate = representationsByID
+        let context = CoreDataStack.shared.container.newBackgroundContext()
+        
+        context.performAndWait {
+            do {
+                
+                let fetchRequest: NSFetchRequest<Chore> = Chore.fetchRequest()
+                
+                fetchRequest.predicate = NSPredicate(format: "choreId IN %@", idsToFetch)
+                
+                let existingChores = try context.fetch(fetchRequest)
+                
+                for chore in existingChores {
+                    let id = chore.choreId
+                    
+                    guard let representation = representationsByID[id] else { continue }
+                    
+                    chore.choreLabel = representation.choreName
+                    chore.choreIcon = representation.choreIcon
+                    chore.choreCompleted = representation.choreCompleted ?? false
+                    chore.chorePointValue = representation.chorePointValue
+                    
+                    choresToCreate.removeValue(forKey: id)
+                }
+                
+                for representation in choresToCreate.values {
+                    Chore(choreRepresentation: representation, context: context)
+                }
+                
+                CoreDataStack.shared.save(context: context)
+            } catch {
+                NSLog("Error fetching tasks from persistent store: \(error)")
+            }
+        }
         
     }
 }

@@ -26,10 +26,10 @@ extension Chore {
     }
     
     @discardableResult convenience init?(choreRepresentation: ChoreRepresentation, context: NSManagedObjectContext) {
-        self.init(choreIcon: choreRepresentation.choreIcon,
+        self.init(choreIcon: choreRepresentation.choreIcon ?? "",
                   choreLabel: choreRepresentation.choreName,
                   chorePointValue: choreRepresentation.chorePointValue,
-                  choreCompleted: choreRepresentation.choreCompleted,
+                  choreCompleted: choreRepresentation.choreCompleted ?? false,
                   context: context)
     }
 }

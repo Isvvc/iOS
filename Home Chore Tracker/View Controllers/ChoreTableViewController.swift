@@ -18,14 +18,14 @@ class ChoreTableViewController: UITableViewController {
         let fetchRequest: NSFetchRequest<Chore> = Chore.fetchRequest()
         
         fetchRequest.sortDescriptors = [
-            NSSortDescriptor(key: "completed", ascending: true),
-            // Change this to choreName if Chore.choreLabel is changed to Chore.choreName
+            NSSortDescriptor(key: "choreCompleted", ascending: true),
+            // todo: Change this to choreName if Chore.choreLabel is changed to Chore.choreName
             NSSortDescriptor(key: "choreLabel", ascending: true)
         ]
         
         let frc = NSFetchedResultsController(fetchRequest: fetchRequest,
                                              managedObjectContext: CoreDataStack.shared.mainContext,
-                                             sectionNameKeyPath: "completed",
+                                             sectionNameKeyPath: "choreCompleted",
                                              cacheName: nil)
         
         frc.delegate = self
@@ -153,7 +153,7 @@ extension ChoreTableViewController: NSFetchedResultsControllerDelegate {
             guard let indexPath = indexPath else { return }
             tableView.reloadRows(at: [indexPath], with: .automatic)
         @unknown default:
-            fatalError()
+            fatalError("Unknown Fetched Results Change Type.")
         }
     }
     
