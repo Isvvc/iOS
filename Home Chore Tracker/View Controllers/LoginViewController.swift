@@ -21,7 +21,7 @@ class LoginViewController: UIViewController {
     let blue = UIColor(red: 5.0, green: 85.0, blue: 150.0, alpha: 1.0)
     let green = UIColor(red: 5.0, green: 175.0, blue: 80.0, alpha: 1.0)
     
-    let choreController = ChoreController()
+    var choreController: ChoreController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
