@@ -181,7 +181,7 @@
                                     <outlet property="choreImageView" destination="2Vf-B9-08S" id="INj-k1-u10"/>
                                     <outlet property="choreNameLabel" destination="c7N-QA-6G9" id="AMQ-HG-TeV"/>
                                     <outlet property="pointsLabel" destination="OF6-pX-6RW" id="1gX-9d-4nN"/>
-                                    <segue destination="iMD-is-d4C" kind="show" id="KlV-jI-Xkf"/>
+                                    <segue destination="iMD-is-d4C" kind="show" identifier="ShowChoreDetailView" id="KlV-jI-Xkf"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -196,7 +196,7 @@
             </objects>
             <point key="canvasLocation" x="2251" y="-958"/>
         </scene>
-        <!--Chore Name-->
+        <!--Chore Detail View Controller-->
         <scene sceneID="cas-Dr-qPj">
             <objects>
                 <viewController id="iMD-is-d4C" customClass="ChoreDetailViewController" customModule="Home_Chore_Tracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -204,14 +204,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Have you completed this chore?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dnK-Tw-oDC">
-                                <rect key="frame" x="80.5" y="118" width="253.5" height="23.5"/>
-                                <fontDescription key="fontDescription" name="Nunito-ExtraBold" family="Nunito" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tIw-FG-M6S">
-                                <rect key="frame" x="87" y="171.5" width="240" height="240"/>
+                                <rect key="frame" x="87" y="195" width="240" height="240"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Bj-ek-iO5">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
@@ -226,42 +220,51 @@
                                     <constraint firstItem="8Bj-ek-iO5" firstAttribute="leading" secondItem="tIw-FG-M6S" secondAttribute="leading" id="rq1-eW-Dj2"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1MQ-77-yyv">
-                                <rect key="frame" x="84" y="427.5" width="246" height="36"/>
-                                <fontDescription key="fontDescription" name="Nunito-ExtraBold" family="Nunito" pointSize="17"/>
-                                <state key="normal" title="Done"/>
-                                <connections>
-                                    <action selector="doneButtonPressed:" destination="iMD-is-d4C" eventType="touchUpInside" id="gU0-UA-IFF"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p8r-eU-nQT">
-                                <rect key="frame" x="20" y="513.5" width="374" height="50"/>
+                                <rect key="frame" x="20" y="533.5" width="374" height="90"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="Fj0-QJ-cdc"/>
+                                </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="We6-ge-Xdl">
+                                <rect key="frame" x="30" y="118" width="354" height="27.5"/>
+                                <fontDescription key="fontDescription" name="Nunito-ExtraBold" family="Nunito" pointSize="20"/>
+                                <color key="textColor" red="0.019607843140000001" green="0.33333333329999998" blue="0.58823529409999997" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mmr-Xb-tol">
+                                <rect key="frame" x="50" y="460" width="314" height="40"/>
+                                <color key="backgroundColor" red="0.019607843140000001" green="0.33333333329999998" blue="0.58823529409999997" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Nunito-ExtraBold" family="Nunito" pointSize="20"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="p4W-r7-rC1" firstAttribute="bottom" secondItem="p8r-eU-nQT" secondAttribute="bottom" constant="249.5" id="1v9-Km-OQK"/>
+                            <constraint firstItem="mmr-Xb-tol" firstAttribute="leading" secondItem="p4W-r7-rC1" secondAttribute="leading" constant="50" id="225-wG-r2c"/>
                             <constraint firstItem="p4W-r7-rC1" firstAttribute="trailing" secondItem="tIw-FG-M6S" secondAttribute="trailing" constant="87" id="2sG-o8-iLB"/>
-                            <constraint firstItem="dnK-Tw-oDC" firstAttribute="centerX" secondItem="ty9-Tm-jj6" secondAttribute="centerX" id="9a4-ZG-USj"/>
+                            <constraint firstItem="mmr-Xb-tol" firstAttribute="top" secondItem="tIw-FG-M6S" secondAttribute="bottom" constant="25" id="4MU-Sw-Cfp"/>
+                            <constraint firstItem="p8r-eU-nQT" firstAttribute="top" secondItem="mmr-Xb-tol" secondAttribute="bottom" constant="33.5" id="8yX-rn-FF8"/>
+                            <constraint firstItem="p4W-r7-rC1" firstAttribute="trailing" secondItem="We6-ge-Xdl" secondAttribute="trailing" constant="30" id="D0a-cG-MSG"/>
                             <constraint firstItem="tIw-FG-M6S" firstAttribute="leading" secondItem="p4W-r7-rC1" secondAttribute="leading" constant="87" id="NPh-pa-NsF"/>
-                            <constraint firstItem="p8r-eU-nQT" firstAttribute="leading" secondItem="p4W-r7-rC1" secondAttribute="leading" constant="20" id="NSq-al-LDe"/>
-                            <constraint firstItem="p4W-r7-rC1" firstAttribute="trailing" secondItem="p8r-eU-nQT" secondAttribute="trailing" constant="20" id="Pez-zq-bCL"/>
-                            <constraint firstItem="tIw-FG-M6S" firstAttribute="top" secondItem="dnK-Tw-oDC" secondAttribute="bottom" constant="30" id="VQW-Rq-Hyu"/>
-                            <constraint firstItem="dnK-Tw-oDC" firstAttribute="top" secondItem="p4W-r7-rC1" secondAttribute="top" constant="30" id="aDa-pZ-uck"/>
-                            <constraint firstItem="1MQ-77-yyv" firstAttribute="leading" secondItem="p4W-r7-rC1" secondAttribute="leading" constant="84" id="fpc-Z3-0Ot"/>
+                            <constraint firstItem="We6-ge-Xdl" firstAttribute="top" secondItem="p4W-r7-rC1" secondAttribute="top" constant="30" id="NvS-kW-eda"/>
+                            <constraint firstItem="p8r-eU-nQT" firstAttribute="leading" secondItem="p4W-r7-rC1" secondAttribute="leading" constant="20" id="bNP-C9-2Ff"/>
+                            <constraint firstItem="p4W-r7-rC1" firstAttribute="trailing" secondItem="p8r-eU-nQT" secondAttribute="trailing" constant="20" id="fnG-JM-8ie"/>
+                            <constraint firstItem="p4W-r7-rC1" firstAttribute="bottom" secondItem="p8r-eU-nQT" secondAttribute="bottom" constant="189.5" id="gW0-hr-Lv0"/>
                             <constraint firstItem="tIw-FG-M6S" firstAttribute="centerX" secondItem="ty9-Tm-jj6" secondAttribute="centerX" id="hcx-Kw-gbG"/>
-                            <constraint firstItem="1MQ-77-yyv" firstAttribute="top" secondItem="tIw-FG-M6S" secondAttribute="bottom" constant="16" id="luP-o1-QKm"/>
-                            <constraint firstItem="p4W-r7-rC1" firstAttribute="trailing" secondItem="1MQ-77-yyv" secondAttribute="trailing" constant="84" id="nYr-2Q-6s4"/>
-                            <constraint firstItem="p8r-eU-nQT" firstAttribute="top" secondItem="1MQ-77-yyv" secondAttribute="bottom" constant="50" id="rqO-hp-eLC"/>
+                            <constraint firstItem="p4W-r7-rC1" firstAttribute="trailing" secondItem="mmr-Xb-tol" secondAttribute="trailing" constant="50" id="v62-cP-eQn"/>
+                            <constraint firstItem="We6-ge-Xdl" firstAttribute="leading" secondItem="p4W-r7-rC1" secondAttribute="leading" constant="30" id="yIc-UF-bcY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="p4W-r7-rC1"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Chore Name" id="A7m-cR-ZPG"/>
+                    <navigationItem key="navigationItem" id="A7m-cR-ZPG"/>
                     <connections>
                         <outlet property="choreImageView" destination="8Bj-ek-iO5" id="lsO-yd-jr1"/>
-                        <outlet property="completedChoreLabel" destination="dnK-Tw-oDC" id="Kow-8M-lYI"/>
-                        <outlet property="doneButton" destination="1MQ-77-yyv" id="J2n-vQ-VJf"/>
+                        <outlet property="completedChoreLabel" destination="We6-ge-Xdl" id="98p-Zu-GPq"/>
+                        <outlet property="doneButton" destination="mmr-Xb-tol" id="uin-ez-wIc"/>
                         <outlet property="starView" destination="p8r-eU-nQT" id="CZE-qB-FUl"/>
                     </connections>
                 </viewController>
