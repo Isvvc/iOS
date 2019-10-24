@@ -16,10 +16,12 @@ class ChoreController {
         fetchChoresFromServer()
     }
     
-    // MARK: - CC Networking
-    
     var bearer: Bearer?
     var user: User?
+    
+    let assignmentController = AssignmentController()
+    
+    // MARK: - CC Networking
     
     let baseURL = URL(string: "https://home-chore-tracker88.herokuapp.com")
     
@@ -89,7 +91,7 @@ class ChoreController {
         }
     }
     
-    // MARK: - Isaac Networking
+    // MARK: - Account networking
     
     func signIn(username: String, password: String, completion: @escaping (Error?) -> Void) {
         
@@ -140,6 +142,8 @@ class ChoreController {
                 
                 let user = User(id: loginResponse.userId, familyNameID: loginResponse.familyNameID, username: loginResponse.username, name: loginResponse.name, password: password)
                 self.user = user
+                
+                self.assignmentController.fetchChoresFromServer(userId: user.id)
             } catch {
                 NSLog("Error decoding login response: \(error)")
                 completion(error)
@@ -150,6 +154,8 @@ class ChoreController {
         }.resume()
         
     }
+    
+    // MARK: - Chore Networking
     
     func fetchChoresFromServer(completion: @escaping () -> Void = { }) {
         guard let baseURL = baseURL else {
@@ -166,13 +172,13 @@ class ChoreController {
         
         URLSession.shared.dataTask(with: request) { data, _, error in
             if let error = error {
-                NSLog("Error fetching tasks: \(error)")
+                NSLog("Error fetching chores: \(error)")
                 completion()
                 return
             }
             
             guard let data = data else {
-                NSLog("No data returned from task fetch data task")
+                NSLog("No data returned from chore fetch data task")
                 completion()
                 return
             }
@@ -181,7 +187,7 @@ class ChoreController {
                 let chores = try JSONDecoder().decode([ChoreRepresentation].self, from: data)
                 self.updateChores(with: chores)
             } catch {
-                NSLog("Error decoding TaskRepresentations: \(error)")
+                NSLog("Error decoding ChoreRepresentations: \(error)")
             }
             
             completion()
@@ -225,9 +231,10 @@ class ChoreController {
                 
                 CoreDataStack.shared.save(context: context)
             } catch {
-                NSLog("Error fetching tasks from persistent store: \(error)")
+                NSLog("Error fetching chores from persistent store: \(error)")
             }
         }
         
     }
+    
 }

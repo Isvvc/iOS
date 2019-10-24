@@ -13,9 +13,38 @@ class ChoreTableViewController: UITableViewController {
     
     var choreController: ChoreController!
     
+    lazy var assignmentFRC: NSFetchedResultsController<Assignment> = {
+        
+        let fetchRequest: NSFetchRequest<Assignment> = Assignment.fetchRequest()
+        
+        fetchRequest.sortDescriptors = [
+            NSSortDescriptor(key: "choreName", ascending: true)
+        ]
+        
+        let frc = NSFetchedResultsController(fetchRequest: fetchRequest,
+                                             managedObjectContext: CoreDataStack.shared.mainContext,
+                                             sectionNameKeyPath: "choreName",
+                                             cacheName: nil)
+        
+        do {
+            try frc.performFetch()
+        } catch {
+            fatalError("Error performing fetch for frc: \(error)")
+        }
+        
+        return frc
+    }()
+    
     lazy var fetchedResultsController: NSFetchedResultsController<Chore> = {
-       
+        
         let fetchRequest: NSFetchRequest<Chore> = Chore.fetchRequest()
+        
+        if let assignments = assignmentFRC.fetchedObjects {
+            let namesToFetch = assignments.map({ $0.choreName })
+            print(namesToFetch)
+            
+            fetchRequest.predicate = NSPredicate(format: "choreLabel IN %@", namesToFetch)
+        }
         
         fetchRequest.sortDescriptors = [
             NSSortDescriptor(key: "choreCompleted", ascending: true),

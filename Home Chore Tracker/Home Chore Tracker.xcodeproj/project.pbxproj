@@ -19,6 +19,9 @@
 		594BFF23235FB75B00F8A42C /* ChoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594BFF22235FB75B00F8A42C /* ChoreController.swift */; };
 		594BFF26235FB7D300F8A42C /* Chores.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 594BFF24235FB7D300F8A42C /* Chores.xcdatamodeld */; };
 		594BFF28235FB82500F8A42C /* Chore+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594BFF27235FB82400F8A42C /* Chore+Convenience.swift */; };
+		5990F45623620C79001A3221 /* Assignment+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5990F45523620C79001A3221 /* Assignment+Convenience.swift */; };
+		5990F45823620D1B001A3221 /* AssignmentRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5990F45723620D1B001A3221 /* AssignmentRepresentation.swift */; };
+		5990F45A23620E62001A3221 /* AssignmentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5990F45923620E62001A3221 /* AssignmentController.swift */; };
 		77384067235E557E0035D18E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77384066235E557E0035D18E /* User.swift */; };
 		7738406A235E5B0E0035D18E /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77384069235E5B0E0035D18E /* CoreDataStack.swift */; };
 		77384072235E6BE90035D18E /* ChoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77384071235E6BE90035D18E /* ChoreTableViewController.swift */; };
@@ -48,6 +51,9 @@
 		594BFF22235FB75B00F8A42C /* ChoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChoreController.swift; path = "View Controllers/ChoreController.swift"; sourceTree = SOURCE_ROOT; };
 		594BFF25235FB7D300F8A42C /* Chores.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Chores.xcdatamodel; sourceTree = "<group>"; };
 		594BFF27235FB82400F8A42C /* Chore+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Chore+Convenience.swift"; sourceTree = "<group>"; };
+		5990F45523620C79001A3221 /* Assignment+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Assignment+Convenience.swift"; sourceTree = "<group>"; };
+		5990F45723620D1B001A3221 /* AssignmentRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentRepresentation.swift; sourceTree = "<group>"; };
+		5990F45923620E62001A3221 /* AssignmentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AssignmentController.swift; path = Models/AssignmentController.swift; sourceTree = SOURCE_ROOT; };
 		77384066235E557E0035D18E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		77384069235E5B0E0035D18E /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		77384071235E6BE90035D18E /* ChoreTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreTableViewController.swift; sourceTree = "<group>"; };
@@ -134,7 +140,9 @@
 				77384069235E5B0E0035D18E /* CoreDataStack.swift */,
 				594BFF24235FB7D300F8A42C /* Chores.xcdatamodeld */,
 				594BFF27235FB82400F8A42C /* Chore+Convenience.swift */,
+				5990F45523620C79001A3221 /* Assignment+Convenience.swift */,
 				77384085235FE3EC0035D18E /* ChoreRepresentation.swift */,
+				5990F45723620D1B001A3221 /* AssignmentRepresentation.swift */,
 				77384089235FE5ED0035D18E /* Bearer.swift */,
 				7738408B235FE6080035D18E /* LoginResponse.swift */,
 				7738408D235FE6590035D18E /* UserRepresentation.swift */,
@@ -146,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				594BFF22235FB75B00F8A42C /* ChoreController.swift */,
+				5990F45923620E62001A3221 /* AssignmentController.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -324,6 +333,7 @@
 			files = (
 				590017BA2360B6F20059E69C /* ChoreTabBarViewController.swift in Sources */,
 				77384086235FE3EC0035D18E /* ChoreRepresentation.swift in Sources */,
+				5990F45A23620E62001A3221 /* AssignmentController.swift in Sources */,
 				7738406A235E5B0E0035D18E /* CoreDataStack.swift in Sources */,
 				77384074235E6C2A0035D18E /* ChoreDetailViewController.swift in Sources */,
 				590E4F20235E42DD008FD030 /* PointsViewController.swift in Sources */,
@@ -334,6 +344,8 @@
 				590E4F03235E1BEB008FD030 /* AppDelegate.swift in Sources */,
 				77384067235E557E0035D18E /* User.swift in Sources */,
 				590E4F1C235E2034008FD030 /* ProfileViewController.swift in Sources */,
+				5990F45623620C79001A3221 /* Assignment+Convenience.swift in Sources */,
+				5990F45823620D1B001A3221 /* AssignmentRepresentation.swift in Sources */,
 				7738408A235FE5ED0035D18E /* Bearer.swift in Sources */,
 				594BFF23235FB75B00F8A42C /* ChoreController.swift in Sources */,
 				590017B82360B5980059E69C /* LoginViewController.swift in Sources */,
