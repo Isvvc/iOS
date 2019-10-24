@@ -16,6 +16,11 @@
 		590E4F12235E1BED008FD030 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 590E4F10235E1BED008FD030 /* LaunchScreen.storyboard */; };
 		590E4F1C235E2034008FD030 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590E4F1B235E2034008FD030 /* ProfileViewController.swift */; };
 		590E4F20235E42DD008FD030 /* PointsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590E4F1F235E42DC008FD030 /* PointsViewController.swift */; };
+		5932DF3E236246EC00F0F167 /* HomeChoreTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5932DF3D236246EC00F0F167 /* HomeChoreTrackerTests.swift */; };
+		5932DF462362486400F0F167 /* GoodMockData.json in Resources */ = {isa = PBXBuildFile; fileRef = 5932DF452362486400F0F167 /* GoodMockData.json */; };
+		5932DF472362486500F0F167 /* GoodMockData.json in Resources */ = {isa = PBXBuildFile; fileRef = 5932DF452362486400F0F167 /* GoodMockData.json */; };
+		5932DF492362489000F0F167 /* BadMockData.json in Resources */ = {isa = PBXBuildFile; fileRef = 5932DF482362489000F0F167 /* BadMockData.json */; };
+		5932DF4A2362489000F0F167 /* BadMockData.json in Resources */ = {isa = PBXBuildFile; fileRef = 5932DF482362489000F0F167 /* BadMockData.json */; };
 		594BFF23235FB75B00F8A42C /* ChoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594BFF22235FB75B00F8A42C /* ChoreController.swift */; };
 		594BFF26235FB7D300F8A42C /* Chores.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 594BFF24235FB7D300F8A42C /* Chores.xcdatamodeld */; };
 		594BFF28235FB82500F8A42C /* Chore+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594BFF27235FB82400F8A42C /* Chore+Convenience.swift */; };
@@ -35,6 +40,16 @@
 		B41D3101EBA3FF779EC33CA0 /* Pods_Home_Chore_Tracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4A25F9C62F2EBCABBBFC9AB /* Pods_Home_Chore_Tracker.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		5932DF40236246EC00F0F167 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 590E4EF7235E1BEB008FD030 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 590E4EFE235E1BEB008FD030;
+			remoteInfo = "Home Chore Tracker";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		590017B72360B5980059E69C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		590017B92360B6F20059E69C /* ChoreTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreTabBarViewController.swift; sourceTree = "<group>"; };
@@ -48,6 +63,11 @@
 		590E4F13235E1BED008FD030 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		590E4F1B235E2034008FD030 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		590E4F1F235E42DC008FD030 /* PointsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsViewController.swift; sourceTree = "<group>"; };
+		5932DF3B236246EB00F0F167 /* HomeChoreTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomeChoreTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5932DF3D236246EC00F0F167 /* HomeChoreTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeChoreTrackerTests.swift; sourceTree = "<group>"; };
+		5932DF3F236246EC00F0F167 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5932DF452362486400F0F167 /* GoodMockData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GoodMockData.json; sourceTree = "<group>"; };
+		5932DF482362489000F0F167 /* BadMockData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BadMockData.json; sourceTree = "<group>"; };
 		594BFF22235FB75B00F8A42C /* ChoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChoreController.swift; path = "View Controllers/ChoreController.swift"; sourceTree = SOURCE_ROOT; };
 		594BFF25235FB7D300F8A42C /* Chores.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Chores.xcdatamodel; sourceTree = "<group>"; };
 		594BFF27235FB82400F8A42C /* Chore+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Chore+Convenience.swift"; sourceTree = "<group>"; };
@@ -78,6 +98,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5932DF38236246EB00F0F167 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -99,6 +126,7 @@
 				77384062235E55080035D18E /* Models */,
 				77384078235F5B9C0035D18E /* Fonts */,
 				77384061235E54FC0035D18E /* Resources */,
+				5932DF3C236246EB00F0F167 /* HomeChoreTrackerTests */,
 				590E4F00235E1BEB008FD030 /* Products */,
 				80CB15785EB5F04F9FEC88EC /* Pods */,
 				0A5639971694F76A393ED8EE /* Frameworks */,
@@ -109,8 +137,20 @@
 			isa = PBXGroup;
 			children = (
 				590E4EFF235E1BEB008FD030 /* Home Chore Tracker.app */,
+				5932DF3B236246EB00F0F167 /* HomeChoreTrackerTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		5932DF3C236246EB00F0F167 /* HomeChoreTrackerTests */ = {
+			isa = PBXGroup;
+			children = (
+				5932DF3D236246EC00F0F167 /* HomeChoreTrackerTests.swift */,
+				5932DF3F236246EC00F0F167 /* Info.plist */,
+				5932DF452362486400F0F167 /* GoodMockData.json */,
+				5932DF482362489000F0F167 /* BadMockData.json */,
+			);
+			path = HomeChoreTrackerTests;
 			sourceTree = "<group>";
 		};
 		77384060235E54F00035D18E /* Storyboards */ = {
@@ -220,6 +260,24 @@
 			productReference = 590E4EFF235E1BEB008FD030 /* Home Chore Tracker.app */;
 			productType = "com.apple.product-type.application";
 		};
+		5932DF3A236246EB00F0F167 /* HomeChoreTrackerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5932DF44236246EC00F0F167 /* Build configuration list for PBXNativeTarget "HomeChoreTrackerTests" */;
+			buildPhases = (
+				5932DF37236246EB00F0F167 /* Sources */,
+				5932DF38236246EB00F0F167 /* Frameworks */,
+				5932DF39236246EB00F0F167 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5932DF41236246EC00F0F167 /* PBXTargetDependency */,
+			);
+			name = HomeChoreTrackerTests;
+			productName = HomeChoreTrackerTests;
+			productReference = 5932DF3B236246EB00F0F167 /* HomeChoreTrackerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -232,6 +290,10 @@
 				TargetAttributes = {
 					590E4EFE235E1BEB008FD030 = {
 						CreatedOnToolsVersion = 11.1;
+					};
+					5932DF3A236246EB00F0F167 = {
+						CreatedOnToolsVersion = 11.1;
+						TestTargetID = 590E4EFE235E1BEB008FD030;
 					};
 				};
 			};
@@ -249,6 +311,7 @@
 			projectRoot = "";
 			targets = (
 				590E4EFE235E1BEB008FD030 /* Home Chore Tracker */,
+				5932DF3A236246EB00F0F167 /* HomeChoreTrackerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -260,8 +323,19 @@
 			files = (
 				590E4F12235E1BED008FD030 /* LaunchScreen.storyboard in Resources */,
 				590E4F0F235E1BED008FD030 /* Assets.xcassets in Resources */,
+				5932DF462362486400F0F167 /* GoodMockData.json in Resources */,
+				5932DF492362489000F0F167 /* BadMockData.json in Resources */,
 				590E4F0A235E1BEB008FD030 /* Main.storyboard in Resources */,
 				7738407A235F5BBD0035D18E /* Nunito-ExtraBold.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5932DF39236246EB00F0F167 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5932DF472362486500F0F167 /* GoodMockData.json in Resources */,
+				5932DF4A2362489000F0F167 /* BadMockData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,7 +429,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5932DF37236246EB00F0F167 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5932DF3E236246EC00F0F167 /* HomeChoreTrackerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5932DF41236246EC00F0F167 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 590E4EFE235E1BEB008FD030 /* Home Chore Tracker */;
+			targetProxy = 5932DF40236246EC00F0F167 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		590E4F08235E1BEB008FD030 /* Main.storyboard */ = {
@@ -527,6 +617,44 @@
 			};
 			name = Release;
 		};
+		5932DF42236246EC00F0F167 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = HomeChoreTrackerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.LambdaSchool.HomeChoreTrackerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Home Chore Tracker.app/Home Chore Tracker";
+			};
+			name = Debug;
+		};
+		5932DF43236246EC00F0F167 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = HomeChoreTrackerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.LambdaSchool.HomeChoreTrackerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Home Chore Tracker.app/Home Chore Tracker";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -544,6 +672,15 @@
 			buildConfigurations = (
 				590E4F17235E1BED008FD030 /* Debug */,
 				590E4F18235E1BED008FD030 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5932DF44236246EC00F0F167 /* Build configuration list for PBXNativeTarget "HomeChoreTrackerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5932DF42236246EC00F0F167 /* Debug */,
+				5932DF43236246EC00F0F167 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
