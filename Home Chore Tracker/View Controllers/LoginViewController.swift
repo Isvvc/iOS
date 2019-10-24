@@ -33,9 +33,11 @@ class LoginViewController: UIViewController {
     func updateViews() {
         
         addLabelBackground(theLabel: choreLabel)
-        addLabelBackground(theLabel: userNameLabel)
-        addLabelBackground(theLabel: passwordLabel)
+//        addLabelBackground(theLabel: userNameLabel)
+//        addLabelBackground(theLabel: passwordLabel)
         addButtonBackground(theButton: loginButton)
+        userNameLabel.textColor = blue
+        passwordLabel.textColor = blue
 
     }
     
@@ -73,7 +75,7 @@ class LoginViewController: UIViewController {
             if error != nil {
                 
                 DispatchQueue.main.async {
-                    let alert = UIAlertController(title: "Could not sign in", message: "There was an error signing in", preferredStyle: .alert)
+                    let alert = UIAlertController(title: "Could not log in", message: "There was an error error in", preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                     self.present(alert, animated: true, completion: nil)
                 }
