@@ -19,6 +19,7 @@ class ChoreController {
     // MARK: - CC Networking
     
     var bearer: Bearer?
+    var user: User?
     
     let baseURL = URL(string: "https://home-chore-tracker88.herokuapp.com")
     
@@ -133,8 +134,12 @@ class ChoreController {
             
             do {
                 let loginResponse = try JSONDecoder().decode(LoginResponse.self, from: data)
+                
                 let bearer = Bearer(token: loginResponse.token)
                 self.bearer = bearer
+                
+                let user = User(id: loginResponse.userId, familyNameID: loginResponse.familyNameID, username: loginResponse.username, name: loginResponse.name, password: password)
+                self.user = user
             } catch {
                 NSLog("Error decoding login response: \(error)")
                 completion(error)

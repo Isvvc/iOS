@@ -67,6 +67,9 @@ class ProfileViewController: UIViewController {
         //let textColor = UIColor(red: 0.02, green: 0.33, blue: 0.59, alpha: 1.0)
         
         nameLabel.textColor = highlightColor
+        if let user = choreController.user {
+            nameLabel.text = user.name.capitalized
+        }
 
         loadImage(imageName: imageName)
         

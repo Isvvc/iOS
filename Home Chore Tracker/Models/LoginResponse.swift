@@ -11,4 +11,7 @@ import Foundation
 struct LoginResponse: Codable {
     let token: String
     let username: String
+    let name: String
+    let userId: Int16
+    let familyNameID: String
 }
