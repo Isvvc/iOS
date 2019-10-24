@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 struct User {
-    let id: UUID
+    let id: Int16
     let familyNameID: String
     let username: String
     let name: String
