@@ -27,16 +27,11 @@ class ChoreTableViewCell: UITableViewCell {
 
     // MARK: - Methods
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    private func updateViews() {
         
-        updateViews()
-    }
-    
-    func updateViews() {
-        
-//        choreImageView.image = chore.image
-
+        if let image = UIImage(named: chore?.choreIcon ?? "") {
+            choreImageView.image = image
+        }
         choreNameLabel.text = chore?.choreLabel
         //choreNameLabel.textColor = UIColor(displayP3Red: 5.0, green: 85.0, blue: 150.0, alpha: 1.0)
         
