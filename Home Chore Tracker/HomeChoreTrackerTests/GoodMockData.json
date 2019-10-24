@@ -1,0 +1,62 @@
+[
+    {
+      "choreId": 1,
+      "choreName": "vaccum house",
+      "choreIcon": "Vacuum.png",
+      "chorePointValue": 1
+    },
+    {
+      "choreId": 2,
+      "choreName": "vaccum livingroom",
+      "choreIcon": "Vacuum.png",
+      "chorePointValue": 1
+    },
+    {
+      "choreId": 3,
+      "choreName": "vaccum bedroom",
+      "choreIcon": "Vacuum.png",
+      "chorePointValue": 1
+    },
+    {
+      "choreId": 4,
+      "choreName": "collect and take out trash",
+      "choreIcon": "Trash.png",
+      "chorePointValue": 1
+    },
+    {
+      "choreId": 5,
+      "choreName": "dust",
+      "choreIcon": "Dust.png",
+      "chorePointValue": 1
+    },
+    {
+      "choreId": 6,
+      "choreName": "clean litterbox",
+      "choreIcon": "Toilet.png",
+      "chorePointValue": 1
+    },
+    {
+      "choreId": 7,
+      "choreName": "take dog for walk",
+      "choreIcon": "Toilet.png",
+      "chorePointValue": 1
+    },
+    {
+      "choreId": 8,
+      "choreName": "pickup clutter",
+      "choreIcon": "",
+      "chorePointValue": 1
+    },
+    {
+      "choreId": 9,
+      "choreName": "clean bathroom(s)",
+      "choreIcon": "Toilet.png",
+      "chorePointValue": 1
+    },
+    {
+      "choreId": 10,
+      "choreName": "sweep",
+      "choreIcon": "BroomSweeping.png",
+      "chorePointValue": 1
+    }
+]
