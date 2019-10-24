@@ -24,6 +24,8 @@ class LoginViewController: UIViewController {
     
     var choreController: ChoreController!
     
+    var onComplete: [( () -> Void )] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViews()
@@ -83,6 +85,11 @@ class LoginViewController: UIViewController {
             } else {
                 
                 DispatchQueue.main.async {
+                    
+                    for callback in self.onComplete {
+                        callback()
+                    }
+                    
                     self.dismiss(animated: true, completion: nil)
                     
 //                    self.dismiss(animated: true) {

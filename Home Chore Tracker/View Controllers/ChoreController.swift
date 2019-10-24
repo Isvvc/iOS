@@ -143,7 +143,7 @@ class ChoreController {
                 let user = User(id: loginResponse.userId, familyNameID: loginResponse.familyNameID, username: loginResponse.username, name: loginResponse.name, password: password)
                 self.user = user
                 
-                self.assignmentController.fetchChoresFromServer(userId: user.id)
+                self.assignmentController.fetchAssignmentsFromServer(userId: user.id)
             } catch {
                 NSLog("Error decoding login response: \(error)")
                 completion(error)
