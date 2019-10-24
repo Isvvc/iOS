@@ -18,11 +18,13 @@ class LoginViewController: UIViewController {
     @IBOutlet private weak var passwordTextField: UITextField!
     @IBOutlet private weak var loginButton: UIButton!
     
-    let orange = UIColor(red:0.86, green:0.59, blue:0.04, alpha:1.0)
-    let blue = UIColor(red:0.02, green:0.33, blue:0.59, alpha:1.0)
-    let green = UIColor(red:0.02, green:0.69, blue:0.31, alpha:1.0)
+    let orange = UIColor(red: 0.86, green: 0.59, blue: 0.04, alpha: 1.0)
+    let blue = UIColor(red: 0.02, green: 0.33, blue: 0.59, alpha: 1.0)
+    let green = UIColor(red: 0.02, green: 0.69, blue: 0.31, alpha: 1.0)
     
     var choreController: ChoreController!
+    
+    var onComplete: [( () -> Void )] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +50,7 @@ class LoginViewController: UIViewController {
         label.layer.borderColor = orange.cgColor
         label.layer.borderWidth = 1
         label.layer.backgroundColor = orange.cgColor
-        label.layer.cornerRadius = 4
+        label.layer.cornerRadius = 10
         
     }
     
@@ -59,7 +61,7 @@ class LoginViewController: UIViewController {
         button.layer.borderWidth = 1
         button.layer.backgroundColor = green.cgColor
         button.setTitleColor(.white, for: .normal)
-        button.layer.cornerRadius = 4
+        button.layer.cornerRadius = 10
     
     }
     
@@ -75,7 +77,7 @@ class LoginViewController: UIViewController {
             if error != nil {
                 
                 DispatchQueue.main.async {
-                    let alert = UIAlertController(title: "Could not log in", message: "There was an error error in", preferredStyle: .alert)
+                    let alert = UIAlertController(title: "Could not log in", message: "There was an error logging in", preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                     self.present(alert, animated: true, completion: nil)
                 }
@@ -83,6 +85,11 @@ class LoginViewController: UIViewController {
             } else {
                 
                 DispatchQueue.main.async {
+                    
+                    for callback in self.onComplete {
+                        callback()
+                    }
+                    
                     self.dismiss(animated: true, completion: nil)
                     
 //                    self.dismiss(animated: true) {

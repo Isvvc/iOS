@@ -12,7 +12,7 @@ class AssignmentController {
     
     let baseURL = URL(string: "https://home-chore-tracker88.herokuapp.com")!
     
-    func fetchChoresFromServer(userId: Int16, completion: @escaping () -> Void = { }) {
+    func fetchAssignmentsFromServer(userId: Int16, completion: @escaping () -> Void = { }) {
         
         let requestURL = baseURL
         .appendingPathComponent("api")

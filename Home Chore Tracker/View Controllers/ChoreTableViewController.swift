@@ -42,8 +42,6 @@ class ChoreTableViewController: UITableViewController {
         
         if let assignments = assignmentFRC.fetchedObjects {
             let namesToFetch = assignments.map({ $0.choreName })
-            print(namesToFetch)
-            
             fetchRequest.predicate = NSPredicate(format: "choreLabel IN %@", namesToFetch)
         }
         
