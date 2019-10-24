@@ -13,15 +13,15 @@ class ChoreDetailViewController: UIViewController {
     @IBOutlet private weak var completedChoreLabel: UILabel!
     @IBOutlet private weak var choreImageView: UIImageView!
     @IBOutlet private weak var doneButton: UIButton!
-    @IBOutlet weak var starView: UIView!
+    @IBOutlet private weak var starView: UIView!
     
     var user: UserRepresentation?
     var chore: Chore?
     var choreController: ChoreController?
     let starImage = UIImage(named: "StarPoints")
-    let orange = UIColor(red:0.86, green:0.59, blue:0.04, alpha:1.0)
-    let blue = UIColor(red:0.02, green:0.33, blue:0.59, alpha:1.0)
-    let green = UIColor(red:0.02, green:0.69, blue:0.31, alpha:1.0)
+    let orange = UIColor(red: 0.86, green: 0.59, blue: 0.04, alpha: 1.0)
+    let blue = UIColor(red: 0.02, green: 0.33, blue: 0.59, alpha: 1.0)
+    let green = UIColor(red: 0.02, green: 0.69, blue: 0.31, alpha: 1.0)
     let points = 5
 
     override func viewDidLoad() {
@@ -36,7 +36,7 @@ class ChoreDetailViewController: UIViewController {
         title = chore?.choreLabel
         
         completedChoreLabel.text = "Have you completed \(String(describing: chore?.choreLabel))"
-        completedChoreLabel.textColor = UIColor(red:0.02, green:0.69, blue:0.31, alpha:1.0)
+        completedChoreLabel.textColor = green
         
         //choreImageView.image = chore?.choreIcon
         
