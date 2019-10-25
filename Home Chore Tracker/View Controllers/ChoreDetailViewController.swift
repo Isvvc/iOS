@@ -12,11 +12,13 @@ class ChoreDetailViewController: UIViewController {
     
     @IBOutlet weak var completedChoreLabel: UILabel!
     @IBOutlet private weak var choreImageView: UIImageView!
+    @IBOutlet private weak var starView: UIView!
     @IBOutlet weak var doneButton: UIButton!
-    @IBOutlet weak var starView: UIView!
     
     var chore: Chore?
     var choreController: ChoreController?
+    var delegate: ChoreTableViewDelegate?
+    
     let starImage = UIImage(named: "StarPoints")
     let orange = UIColor(red: 0.86, green: 0.59, blue: 0.04, alpha: 1.0)
     let blue = UIColor(red: 0.02, green: 0.33, blue: 0.59, alpha: 1.0)
@@ -31,10 +33,15 @@ class ChoreDetailViewController: UIViewController {
     func updateViews() {
         guard let chore = chore, let choreLabel = chore.choreLabel else { return }
         title = choreLabel.capitalized
-        completedChoreLabel.text = "Have you completed \(choreLabel)"
+        completedChoreLabel.text = "Have you completed \(choreLabel)?"
         completedChoreLabel.textColor = .black
         choreImageView.image = UIImage(named: chore.choreIcon ?? "")
         starPoints()
+        if chore.choreCompleted {
+            doneButton.setTitle("Not Done", for: .normal)
+        } else {
+            doneButton.setTitle("Done", for: .normal)
+        }
     }
         
     func starPoints() {
@@ -56,9 +63,24 @@ class ChoreDetailViewController: UIViewController {
     
     @IBAction func doneButtonPressed(_ sender: UIButton) {
         guard let chore = chore, let choreLabel = chore.choreLabel else { return }
-        let alert = UIAlertController(title: "Chore Completed!", message: "Good job on completing \(choreLabel), you've earned \(chore.chorePointValue) more points.", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        present(alert, animated: true, completion: nil)
+        
+        chore.choreCompleted.toggle()
+        
+        if chore.choreCompleted {
+            let alert = UIAlertController(title: "Chore Completed!", message: "Good job on completing \(choreLabel), you've earned \(chore.chorePointValue) more points.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+                self.navigationController?.popViewController(animated: true)
+            }))
+            present(alert, animated: true, completion: nil)
+        } else {
+            let alert = UIAlertController(title: "Chore Not Completed.", message: "You have not completed this chore.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+                self.navigationController?.popViewController(animated: true)
+            }))
+            present(alert, animated: true, completion: nil)
+        }
+        
+        delegate?.updatePoints()
     }
 }
 
@@ -69,10 +91,10 @@ extension ChoreDetailViewController {
         iV.frame = CGRect(x: 0, y: 0, width: 10, height: 10)
         starView.addSubview(iV)
         iV.translatesAutoresizingMaskIntoConstraints = false
-        iV.topAnchor.constraint(equalTo: starView.topAnchor).isActive = true
-        iV.bottomAnchor.constraint(equalTo: starView.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        iV.heightAnchor.constraint(equalTo: iV.widthAnchor).isActive = true
         iV.leadingAnchor.constraint(equalTo: starView.centerXAnchor, constant: -35).isActive = true
         iV.trailingAnchor.constraint(equalTo: starView.centerXAnchor, constant: 35).isActive = true
+        iV.centerYAnchor.constraint(equalTo: starView.centerYAnchor).isActive = true
     }
     
     func twoStars() {
@@ -84,12 +106,13 @@ extension ChoreDetailViewController {
         starView.addSubview(iV2)
         iV.translatesAutoresizingMaskIntoConstraints = false
         iV2.translatesAutoresizingMaskIntoConstraints = false
-        iV.topAnchor.constraint(equalTo: starView.safeAreaLayoutGuide.topAnchor).isActive = true
-        iV.bottomAnchor.constraint(equalTo: starView.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        iV.heightAnchor.constraint(equalTo: iV.widthAnchor).isActive = true
+        iV.centerYAnchor.constraint(equalTo: starView.centerYAnchor).isActive = true
         iV.leadingAnchor.constraint(equalTo: starView.centerXAnchor, constant: -70).isActive = true
         iV.trailingAnchor.constraint(equalTo: starView.centerXAnchor).isActive = true
-        iV2.topAnchor.constraint(equalTo: starView.safeAreaLayoutGuide.topAnchor).isActive = true
-        iV2.bottomAnchor.constraint(equalTo: starView.safeAreaLayoutGuide.bottomAnchor).isActive = true
+
+        iV2.heightAnchor.constraint(equalTo: iV2.widthAnchor).isActive = true
+        iV2.centerYAnchor.constraint(equalTo: starView.centerYAnchor).isActive = true
         iV2.leadingAnchor.constraint(equalTo: starView.centerXAnchor).isActive = true
         iV2.trailingAnchor.constraint(equalTo: starView.centerXAnchor, constant: 70).isActive = true
     }
@@ -107,16 +130,16 @@ extension ChoreDetailViewController {
         iV.translatesAutoresizingMaskIntoConstraints = false
         iV2.translatesAutoresizingMaskIntoConstraints = false
         iV3.translatesAutoresizingMaskIntoConstraints = false
-        iV.topAnchor.constraint(equalTo: starView.safeAreaLayoutGuide.topAnchor).isActive = true
-        iV.bottomAnchor.constraint(equalTo: starView.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        iV.heightAnchor.constraint(equalTo: iV.widthAnchor).isActive = true
+        iV.centerYAnchor.constraint(equalTo: starView.centerYAnchor).isActive = true
         iV.leadingAnchor.constraint(equalTo: starView.centerXAnchor, constant: -35).isActive = true
         iV.trailingAnchor.constraint(equalTo: starView.centerXAnchor, constant: 35).isActive = true
-        iV2.topAnchor.constraint(equalTo: starView.safeAreaLayoutGuide.topAnchor).isActive = true
-        iV2.bottomAnchor.constraint(equalTo: starView.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        iV2.heightAnchor.constraint(equalTo: iV2.widthAnchor).isActive = true
+        iV2.centerYAnchor.constraint(equalTo: starView.centerYAnchor).isActive = true
         iV2.leadingAnchor.constraint(equalTo: iV.leadingAnchor, constant: -70).isActive = true
         iV2.trailingAnchor.constraint(equalTo: iV.leadingAnchor).isActive = true
-        iV3.topAnchor.constraint(equalTo: starView.safeAreaLayoutGuide.topAnchor).isActive = true
-        iV3.bottomAnchor.constraint(equalTo: starView.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        iV3.heightAnchor.constraint(equalTo: iV3.widthAnchor).isActive = true
+        iV3.centerYAnchor.constraint(equalTo: starView.centerYAnchor).isActive = true
         iV3.leadingAnchor.constraint(equalTo: iV.trailingAnchor).isActive = true
         iV3.trailingAnchor.constraint(equalTo: iV.trailingAnchor, constant: 70).isActive = true
     }
@@ -140,20 +163,20 @@ extension ChoreDetailViewController {
         iV4.translatesAutoresizingMaskIntoConstraints = false
         iV.translatesAutoresizingMaskIntoConstraints = false
         iV2.translatesAutoresizingMaskIntoConstraints = false
-        iV.topAnchor.constraint(equalTo: starView.safeAreaLayoutGuide.topAnchor).isActive = true
-        iV.bottomAnchor.constraint(equalTo: starView.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        iV.heightAnchor.constraint(equalTo: iV.widthAnchor).isActive = true
+        iV.centerYAnchor.constraint(equalTo: starView.centerYAnchor).isActive = true
         iV.leadingAnchor.constraint(equalTo: starView.centerXAnchor, constant: -35).isActive = true
         iV.trailingAnchor.constraint(equalTo: starView.centerXAnchor).isActive = true
-        iV2.topAnchor.constraint(equalTo: starView.safeAreaLayoutGuide.topAnchor).isActive = true
-        iV2.bottomAnchor.constraint(equalTo: starView.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        iV2.heightAnchor.constraint(equalTo: iV2.widthAnchor).isActive = true
+        iV2.centerYAnchor.constraint(equalTo: starView.centerYAnchor).isActive = true
         iV2.leadingAnchor.constraint(equalTo: starView.centerXAnchor).isActive = true
         iV2.trailingAnchor.constraint(equalTo: starView.centerXAnchor, constant: 35).isActive = true
-        iV3.topAnchor.constraint(equalTo: starView.safeAreaLayoutGuide.topAnchor).isActive = true
-        iV3.bottomAnchor.constraint(equalTo: starView.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        iV3.heightAnchor.constraint(equalTo: iV3.widthAnchor).isActive = true
+        iV3.centerYAnchor.constraint(equalTo: starView.centerYAnchor).isActive = true
         iV3.leadingAnchor.constraint(equalTo: iV.leadingAnchor, constant: -70).isActive = true
         iV3.trailingAnchor.constraint(equalTo: iV.leadingAnchor).isActive = true
-        iV4.topAnchor.constraint(equalTo: starView.safeAreaLayoutGuide.topAnchor).isActive = true
-        iV4.bottomAnchor.constraint(equalTo: starView.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        iV4.heightAnchor.constraint(equalTo: iV4.widthAnchor).isActive = true
+        iV4.centerYAnchor.constraint(equalTo: starView.centerYAnchor).isActive = true
         iV4.leadingAnchor.constraint(equalTo: iV2.trailingAnchor).isActive = true
         iV4.trailingAnchor.constraint(equalTo: iV2.trailingAnchor, constant: 70).isActive = true
     }
@@ -182,24 +205,24 @@ extension ChoreDetailViewController {
         iV.translatesAutoresizingMaskIntoConstraints = false
         iV2.translatesAutoresizingMaskIntoConstraints = false
         iV3.translatesAutoresizingMaskIntoConstraints = false
-        iV.topAnchor.constraint(equalTo: starView.safeAreaLayoutGuide.topAnchor).isActive = true
-        iV.bottomAnchor.constraint(equalTo: starView.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        iV.heightAnchor.constraint(equalTo: iV.widthAnchor).isActive = true
+        iV.centerYAnchor.constraint(equalTo: starView.centerYAnchor).isActive = true
         iV.leadingAnchor.constraint(equalTo: starView.centerXAnchor, constant: -35).isActive = true
         iV.trailingAnchor.constraint(equalTo: starView.centerXAnchor, constant: 35).isActive = true
-        iV2.topAnchor.constraint(equalTo: starView.safeAreaLayoutGuide.topAnchor).isActive = true
-        iV2.bottomAnchor.constraint(equalTo: starView.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        iV2.heightAnchor.constraint(equalTo: iV2.widthAnchor).isActive = true
+        iV2.centerYAnchor.constraint(equalTo: starView.centerYAnchor).isActive = true
         iV2.leadingAnchor.constraint(equalTo: iV.leadingAnchor, constant: -70).isActive = true
         iV2.trailingAnchor.constraint(equalTo: iV.leadingAnchor).isActive = true
-        iV3.topAnchor.constraint(equalTo: starView.safeAreaLayoutGuide.topAnchor).isActive = true
-        iV3.bottomAnchor.constraint(equalTo: starView.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        iV3.heightAnchor.constraint(equalTo: iV3.widthAnchor).isActive = true
+        iV3.centerYAnchor.constraint(equalTo: starView.centerYAnchor).isActive = true
         iV3.leadingAnchor.constraint(equalTo: iV.trailingAnchor).isActive = true
         iV3.trailingAnchor.constraint(equalTo: iV.trailingAnchor, constant: 70).isActive = true
-        iV4.topAnchor.constraint(equalTo: starView.safeAreaLayoutGuide.topAnchor).isActive = true
-        iV4.bottomAnchor.constraint(equalTo: starView.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        iV4.heightAnchor.constraint(equalTo: iV4.widthAnchor).isActive = true
+        iV4.centerYAnchor.constraint(equalTo: starView.centerYAnchor).isActive = true
         iV4.leadingAnchor.constraint(equalTo: iV2.leadingAnchor, constant: -70).isActive = true
         iV4.trailingAnchor.constraint(equalTo: iV2.leadingAnchor).isActive = true
-        iV5.topAnchor.constraint(equalTo: starView.safeAreaLayoutGuide.topAnchor).isActive = true
-        iV5.bottomAnchor.constraint(equalTo: starView.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        iV5.heightAnchor.constraint(equalTo: iV5.widthAnchor).isActive = true
+        iV5.centerYAnchor.constraint(equalTo: starView.centerYAnchor).isActive = true
         iV5.leadingAnchor.constraint(equalTo: iV3.trailingAnchor).isActive = true
         iV5.trailingAnchor.constraint(equalTo: iV3.trailingAnchor, constant: 70).isActive = true
     }
