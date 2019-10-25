@@ -9,10 +9,15 @@
 import UIKit
 import CoreData
 
+protocol ChoreTableViewDelegate {
+    func updatePoints()
+}
+
 class ChoreTableViewController: UITableViewController {
     
     var choreController: ChoreController!
     var chore: Chore!
+    var delegate: ChoreTableViewDelegate?
     
     lazy var assignmentFRC: NSFetchedResultsController<Assignment> = {
         
@@ -110,9 +115,11 @@ class ChoreTableViewController: UITableViewController {
         if segue.identifier == "ShowChoreDetailView" {
             guard let detailVC = segue.destination as? ChoreDetailViewController,
                 let indexPath = tableView.indexPathForSelectedRow else { return }
+            
             let chore = fetchedResultsController.object(at: indexPath)
-                detailVC.chore = chore
-                detailVC.choreController = choreController
+            detailVC.chore = chore
+            detailVC.choreController = choreController
+            detailVC.delegate = delegate
         }
     }
 }

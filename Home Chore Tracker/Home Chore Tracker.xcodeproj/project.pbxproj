@@ -21,6 +21,27 @@
 		5932DF472362486500F0F167 /* GoodMockData.json in Resources */ = {isa = PBXBuildFile; fileRef = 5932DF452362486400F0F167 /* GoodMockData.json */; };
 		5932DF492362489000F0F167 /* BadMockData.json in Resources */ = {isa = PBXBuildFile; fileRef = 5932DF482362489000F0F167 /* BadMockData.json */; };
 		5932DF4A2362489000F0F167 /* BadMockData.json in Resources */ = {isa = PBXBuildFile; fileRef = 5932DF482362489000F0F167 /* BadMockData.json */; };
+		5932DF5223628AD800F0F167 /* HomeChoreTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5932DF5123628AD800F0F167 /* HomeChoreTrackerUITests.swift */; };
+		5932DF5A23628E1D00F0F167 /* Chores.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 594BFF24235FB7D300F8A42C /* Chores.xcdatamodeld */; };
+		5932DF5B23628E2400F0F167 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77384069235E5B0E0035D18E /* CoreDataStack.swift */; };
+		5932DF5C23628E3E00F0F167 /* Chore+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594BFF27235FB82400F8A42C /* Chore+Convenience.swift */; };
+		5932DF5D23628E5300F0F167 /* ChoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594BFF22235FB75B00F8A42C /* ChoreController.swift */; };
+		5932DF5E23628E5A00F0F167 /* ChoreRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77384085235FE3EC0035D18E /* ChoreRepresentation.swift */; };
+		5932DF6423628F6000F0F167 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590E4F1B235E2034008FD030 /* ProfileViewController.swift */; };
+		5932DF6523628F6000F0F167 /* PointsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590E4F1F235E42DC008FD030 /* PointsViewController.swift */; };
+		5932DF6623628F6000F0F167 /* ChoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77384071235E6BE90035D18E /* ChoreTableViewController.swift */; };
+		5932DF6723628F6000F0F167 /* ChoreDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77384073235E6C2A0035D18E /* ChoreDetailViewController.swift */; };
+		5932DF6823628F6000F0F167 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590017B72360B5980059E69C /* LoginViewController.swift */; };
+		5932DF6923628F6000F0F167 /* ChoreTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590017B92360B6F20059E69C /* ChoreTabBarViewController.swift */; };
+		5932DF6A23628F6300F0F167 /* ChoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77384075235E6C520035D18E /* ChoreTableViewCell.swift */; };
+		5932DF6B23628F6C00F0F167 /* AssignmentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5990F45923620E62001A3221 /* AssignmentController.swift */; };
+		5932DF6C23628F7300F0F167 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77384066235E557E0035D18E /* User.swift */; };
+		5932DF6D23628F7300F0F167 /* Assignment+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5990F45523620C79001A3221 /* Assignment+Convenience.swift */; };
+		5932DF6E23628F7300F0F167 /* AssignmentRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5990F45723620D1B001A3221 /* AssignmentRepresentation.swift */; };
+		5932DF6F23628F7300F0F167 /* Bearer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77384089235FE5ED0035D18E /* Bearer.swift */; };
+		5932DF7023628F7300F0F167 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7738408B235FE6080035D18E /* LoginResponse.swift */; };
+		5932DF7123628F7300F0F167 /* UserRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7738408D235FE6590035D18E /* UserRepresentation.swift */; };
+		5932DF7223628F9800F0F167 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 590E4F08235E1BEB008FD030 /* Main.storyboard */; };
 		594BFF23235FB75B00F8A42C /* ChoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594BFF22235FB75B00F8A42C /* ChoreController.swift */; };
 		594BFF26235FB7D300F8A42C /* Chores.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 594BFF24235FB7D300F8A42C /* Chores.xcdatamodeld */; };
 		594BFF28235FB82500F8A42C /* Chore+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594BFF27235FB82400F8A42C /* Chore+Convenience.swift */; };
@@ -48,6 +69,13 @@
 			remoteGlobalIDString = 590E4EFE235E1BEB008FD030;
 			remoteInfo = "Home Chore Tracker";
 		};
+		5932DF5423628AD800F0F167 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 590E4EF7235E1BEB008FD030 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 590E4EFE235E1BEB008FD030;
+			remoteInfo = "Home Chore Tracker";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +96,9 @@
 		5932DF3F236246EC00F0F167 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5932DF452362486400F0F167 /* GoodMockData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GoodMockData.json; sourceTree = "<group>"; };
 		5932DF482362489000F0F167 /* BadMockData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BadMockData.json; sourceTree = "<group>"; };
+		5932DF4F23628AD800F0F167 /* HomeChoreTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomeChoreTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5932DF5123628AD800F0F167 /* HomeChoreTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeChoreTrackerUITests.swift; sourceTree = "<group>"; };
+		5932DF5323628AD800F0F167 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		594BFF22235FB75B00F8A42C /* ChoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChoreController.swift; path = "View Controllers/ChoreController.swift"; sourceTree = SOURCE_ROOT; };
 		594BFF25235FB7D300F8A42C /* Chores.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Chores.xcdatamodel; sourceTree = "<group>"; };
 		594BFF27235FB82400F8A42C /* Chore+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Chore+Convenience.swift"; sourceTree = "<group>"; };
@@ -105,6 +136,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5932DF4C23628AD800F0F167 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -127,6 +165,7 @@
 				77384078235F5B9C0035D18E /* Fonts */,
 				77384061235E54FC0035D18E /* Resources */,
 				5932DF3C236246EB00F0F167 /* HomeChoreTrackerTests */,
+				5932DF5023628AD800F0F167 /* HomeChoreTrackerUITests */,
 				590E4F00235E1BEB008FD030 /* Products */,
 				80CB15785EB5F04F9FEC88EC /* Pods */,
 				0A5639971694F76A393ED8EE /* Frameworks */,
@@ -138,6 +177,7 @@
 			children = (
 				590E4EFF235E1BEB008FD030 /* Home Chore Tracker.app */,
 				5932DF3B236246EB00F0F167 /* HomeChoreTrackerTests.xctest */,
+				5932DF4F23628AD800F0F167 /* HomeChoreTrackerUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -151,6 +191,15 @@
 				5932DF482362489000F0F167 /* BadMockData.json */,
 			);
 			path = HomeChoreTrackerTests;
+			sourceTree = "<group>";
+		};
+		5932DF5023628AD800F0F167 /* HomeChoreTrackerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5932DF5123628AD800F0F167 /* HomeChoreTrackerUITests.swift */,
+				5932DF5323628AD800F0F167 /* Info.plist */,
+			);
+			path = HomeChoreTrackerUITests;
 			sourceTree = "<group>";
 		};
 		77384060235E54F00035D18E /* Storyboards */ = {
@@ -278,6 +327,24 @@
 			productReference = 5932DF3B236246EB00F0F167 /* HomeChoreTrackerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		5932DF4E23628AD800F0F167 /* HomeChoreTrackerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5932DF5823628AD800F0F167 /* Build configuration list for PBXNativeTarget "HomeChoreTrackerUITests" */;
+			buildPhases = (
+				5932DF4B23628AD800F0F167 /* Sources */,
+				5932DF4C23628AD800F0F167 /* Frameworks */,
+				5932DF4D23628AD800F0F167 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5932DF5523628AD800F0F167 /* PBXTargetDependency */,
+			);
+			name = HomeChoreTrackerUITests;
+			productName = HomeChoreTrackerUITests;
+			productReference = 5932DF4F23628AD800F0F167 /* HomeChoreTrackerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -292,6 +359,10 @@
 						CreatedOnToolsVersion = 11.1;
 					};
 					5932DF3A236246EB00F0F167 = {
+						CreatedOnToolsVersion = 11.1;
+						TestTargetID = 590E4EFE235E1BEB008FD030;
+					};
+					5932DF4E23628AD800F0F167 = {
 						CreatedOnToolsVersion = 11.1;
 						TestTargetID = 590E4EFE235E1BEB008FD030;
 					};
@@ -312,6 +383,7 @@
 			targets = (
 				590E4EFE235E1BEB008FD030 /* Home Chore Tracker */,
 				5932DF3A236246EB00F0F167 /* HomeChoreTrackerTests */,
+				5932DF4E23628AD800F0F167 /* HomeChoreTrackerUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -336,6 +408,14 @@
 			files = (
 				5932DF472362486500F0F167 /* GoodMockData.json in Resources */,
 				5932DF4A2362489000F0F167 /* BadMockData.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5932DF4D23628AD800F0F167 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5932DF7223628F9800F0F167 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,6 +517,33 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5932DF4B23628AD800F0F167 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5932DF5E23628E5A00F0F167 /* ChoreRepresentation.swift in Sources */,
+				5932DF6523628F6000F0F167 /* PointsViewController.swift in Sources */,
+				5932DF6F23628F7300F0F167 /* Bearer.swift in Sources */,
+				5932DF6B23628F6C00F0F167 /* AssignmentController.swift in Sources */,
+				5932DF5A23628E1D00F0F167 /* Chores.xcdatamodeld in Sources */,
+				5932DF5C23628E3E00F0F167 /* Chore+Convenience.swift in Sources */,
+				5932DF7023628F7300F0F167 /* LoginResponse.swift in Sources */,
+				5932DF5223628AD800F0F167 /* HomeChoreTrackerUITests.swift in Sources */,
+				5932DF6423628F6000F0F167 /* ProfileViewController.swift in Sources */,
+				5932DF6923628F6000F0F167 /* ChoreTabBarViewController.swift in Sources */,
+				5932DF6D23628F7300F0F167 /* Assignment+Convenience.swift in Sources */,
+				5932DF6C23628F7300F0F167 /* User.swift in Sources */,
+				5932DF6623628F6000F0F167 /* ChoreTableViewController.swift in Sources */,
+				5932DF5B23628E2400F0F167 /* CoreDataStack.swift in Sources */,
+				5932DF6A23628F6300F0F167 /* ChoreTableViewCell.swift in Sources */,
+				5932DF5D23628E5300F0F167 /* ChoreController.swift in Sources */,
+				5932DF6E23628F7300F0F167 /* AssignmentRepresentation.swift in Sources */,
+				5932DF7123628F7300F0F167 /* UserRepresentation.swift in Sources */,
+				5932DF6723628F6000F0F167 /* ChoreDetailViewController.swift in Sources */,
+				5932DF6823628F6000F0F167 /* LoginViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -444,6 +551,11 @@
 			isa = PBXTargetDependency;
 			target = 590E4EFE235E1BEB008FD030 /* Home Chore Tracker */;
 			targetProxy = 5932DF40236246EC00F0F167 /* PBXContainerItemProxy */;
+		};
+		5932DF5523628AD800F0F167 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 590E4EFE235E1BEB008FD030 /* Home Chore Tracker */;
+			targetProxy = 5932DF5423628AD800F0F167 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -655,6 +767,42 @@
 			};
 			name = Release;
 		};
+		5932DF5623628AD800F0F167 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = HomeChoreTrackerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.LambdaSchool.HomeChoreTrackerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Home Chore Tracker";
+			};
+			name = Debug;
+		};
+		5932DF5723628AD800F0F167 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = HomeChoreTrackerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.LambdaSchool.HomeChoreTrackerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Home Chore Tracker";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -681,6 +829,15 @@
 			buildConfigurations = (
 				5932DF42236246EC00F0F167 /* Debug */,
 				5932DF43236246EC00F0F167 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5932DF5823628AD800F0F167 /* Build configuration list for PBXNativeTarget "HomeChoreTrackerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5932DF5623628AD800F0F167 /* Debug */,
+				5932DF5723628AD800F0F167 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

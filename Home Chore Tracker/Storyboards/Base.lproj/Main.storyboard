@@ -41,13 +41,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fWY-Sq-LRH">
-                                <rect key="frame" x="135" y="259.5" width="142" height="41"/>
+                                <rect key="frame" x="136" y="259.5" width="142" height="41"/>
                                 <fontDescription key="fontDescription" name="Nunito-ExtraBold" family="Nunito" pointSize="30"/>
                                 <color key="textColor" red="0.019607843137254902" green="0.33333333333333331" blue="0.58823529411764708" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jeq-4i-hoA">
-                                <rect key="frame" x="145" y="419.5" width="138.5" height="41"/>
+                                <rect key="frame" x="138" y="419.5" width="138.5" height="41"/>
                                 <fontDescription key="fontDescription" name="Nunito-ExtraBold" family="Nunito" pointSize="30"/>
                                 <color key="textColor" red="0.019607843140000001" green="0.33333333329999998" blue="0.58823529409999997" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -63,7 +63,7 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q0S-Ur-KDV">
-                                <rect key="frame" x="129" y="628" width="154" height="80"/>
+                                <rect key="frame" x="129" y="628" width="156" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="DoN-Wy-M4r"/>
                                 </constraints>
@@ -82,6 +82,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-ios-1024" translatesAutoresizingMaskIntoConstraints="NO" id="AEo-Uu-swA">
+                                <rect key="frame" x="140" y="728" width="134" height="134"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="AEo-Uu-swA" secondAttribute="height" multiplier="1:1" id="bxS-jA-VBt"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -91,17 +97,20 @@
                             <constraint firstItem="jeq-4i-hoA" firstAttribute="top" secondItem="0rc-2c-IFa" secondAttribute="bottom" constant="50" id="AyW-Fr-PL0"/>
                             <constraint firstItem="Lki-vt-z3r" firstAttribute="trailing" secondItem="ejJ-nJ-LG0" secondAttribute="trailing" constant="40" id="CWg-5v-014"/>
                             <constraint firstItem="ejJ-nJ-LG0" firstAttribute="leading" secondItem="Lki-vt-z3r" secondAttribute="leading" constant="40" id="CX3-Vr-dkt"/>
+                            <constraint firstItem="AEo-Uu-swA" firstAttribute="bottom" secondItem="Lki-vt-z3r" secondAttribute="bottom" id="EN0-q4-cTZ"/>
                             <constraint firstItem="fWY-Sq-LRH" firstAttribute="top" secondItem="9ZF-G9-zSU" secondAttribute="bottom" constant="32" id="EVb-ek-EqQ"/>
                             <constraint firstItem="9ZF-G9-zSU" firstAttribute="top" secondItem="Lki-vt-z3r" secondAttribute="top" constant="48" id="HmR-FO-4Dp"/>
                             <constraint firstItem="9ZF-G9-zSU" firstAttribute="centerX" secondItem="0rc-2c-IFa" secondAttribute="centerX" id="LBg-ff-IRd"/>
                             <constraint firstItem="ejJ-nJ-LG0" firstAttribute="top" secondItem="jeq-4i-hoA" secondAttribute="bottom" constant="35" id="Lz9-Ap-4ki"/>
                             <constraint firstItem="Lki-vt-z3r" firstAttribute="bottom" secondItem="Q0S-Ur-KDV" secondAttribute="bottom" constant="154" id="N0c-s5-oQJ"/>
+                            <constraint firstItem="fWY-Sq-LRH" firstAttribute="centerX" secondItem="t07-uk-OZZ" secondAttribute="centerX" id="N8B-6l-uu6"/>
+                            <constraint firstItem="jeq-4i-hoA" firstAttribute="centerX" secondItem="t07-uk-OZZ" secondAttribute="centerX" id="T8a-Wj-lmD"/>
                             <constraint firstItem="9ZF-G9-zSU" firstAttribute="leading" secondItem="Lki-vt-z3r" secondAttribute="leading" constant="59" id="UxV-7L-1xg"/>
-                            <constraint firstItem="jeq-4i-hoA" firstAttribute="leading" secondItem="Lki-vt-z3r" secondAttribute="leading" constant="145" id="bXh-8F-sVx"/>
+                            <constraint firstItem="AEo-Uu-swA" firstAttribute="centerX" secondItem="t07-uk-OZZ" secondAttribute="centerX" id="Xsw-M5-Ifj"/>
                             <constraint firstItem="fWY-Sq-LRH" firstAttribute="top" secondItem="t07-uk-OZZ" secondAttribute="top" constant="259.5" id="cNY-zw-br2"/>
                             <constraint firstItem="Q0S-Ur-KDV" firstAttribute="centerX" secondItem="fWY-Sq-LRH" secondAttribute="centerX" id="mGh-Uo-Syd"/>
+                            <constraint firstItem="AEo-Uu-swA" firstAttribute="top" secondItem="Q0S-Ur-KDV" secondAttribute="bottom" constant="20" id="xPg-EG-YAP"/>
                             <constraint firstItem="Lki-vt-z3r" firstAttribute="trailing" secondItem="0rc-2c-IFa" secondAttribute="trailing" constant="40" id="y4S-Wt-FP9"/>
-                            <constraint firstItem="fWY-Sq-LRH" firstAttribute="leading" secondItem="Lki-vt-z3r" secondAttribute="leading" constant="135" id="zog-Ip-AkK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Lki-vt-z3r"/>
                     </view>
@@ -269,6 +278,7 @@
                     <connections>
                         <outlet property="choreImageView" destination="8Bj-ek-iO5" id="lsO-yd-jr1"/>
                         <outlet property="completedChoreLabel" destination="We6-ge-Xdl" id="98p-Zu-GPq"/>
+                        <outlet property="doneButton" destination="mmr-Xb-tol" id="0bE-97-L5P"/>
                         <outlet property="starView" destination="p8r-eU-nQT" id="CZE-qB-FUl"/>
                     </connections>
                 </viewController>
@@ -425,5 +435,6 @@
         <image name="StarPoints" width="131" height="131"/>
         <image name="StarPointsIcon" width="25" height="25"/>
         <image name="UserProfileIcon" width="25" height="25"/>
+        <image name="icon-ios-1024" width="1024" height="1024"/>
     </resources>
 </document>

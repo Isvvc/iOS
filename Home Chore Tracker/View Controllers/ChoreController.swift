@@ -8,7 +8,14 @@
 
 import Foundation
 import CoreData
-import Alamofire
+//import Alamofire
+
+enum HTTPMethod: String {
+    case get = "GET"
+    case post = "POST"
+    case put = "PUT"
+    case delete = "DELETE"
+}
 
 class ChoreController {
     
@@ -24,26 +31,26 @@ class ChoreController {
     // MARK: - CC Networking
     
     let baseURL = URL(string: "https://home-chore-tracker88.herokuapp.com")
-    
-    func getAllChores(completion: @escaping ([Chore]?) -> Void) {
-        guard let baseURL = baseURL else { return }
-        AF.request("\(baseURL)/chores").validate().responseJSON { response in
-            guard let data = response.data else {
-                print("No data returned from response.")
-                completion(nil)
-                return
-            }
-            do {
-                let decoder = JSONDecoder()
-                let choreRepresentations = try decoder.decode([ChoreRepresentation].self, from: data)
-                self.updateChores(with: choreRepresentations)
-            } catch {
-                NSLog("Error decoding: \(error)")
-            }
-            completion(nil)
-            debugPrint("Response: \(response)")
-        }
-    }
+//    
+//    func getAllChores(completion: @escaping ([Chore]?) -> Void) {
+//        guard let baseURL = baseURL else { return }
+//        AF.request("\(baseURL)/chores").validate().responseJSON { response in
+//            guard let data = response.data else {
+//                print("No data returned from response.")
+//                completion(nil)
+//                return
+//            }
+//            do {
+//                let decoder = JSONDecoder()
+//                let choreRepresentations = try decoder.decode([ChoreRepresentation].self, from: data)
+//                self.updateChores(with: choreRepresentations)
+//            } catch {
+//                NSLog("Error decoding: \(error)")
+//            }
+//            completion(nil)
+//            debugPrint("Response: \(response)")
+//        }
+//    }
     
 //    func updateChores(with representations: [ChoreRepresentation]) {
 //        let labelsToFetch = representations.compactMap({ $0.choreName })
@@ -75,21 +82,21 @@ class ChoreController {
 //        }
 //    }
     
-    func updateChore(chore: Chore, completed: Bool) {
-        guard let icon = chore.choreIcon,
-            let label = chore.choreLabel else { return }
-        chore.choreCompleted = completed
-        let choreRep = ChoreRepresentation(choreIcon: icon,
-                                           choreName: label,
-                                           chorePointValue: chore.chorePointValue,
-                                           choreCompleted: chore.choreCompleted,
-                                           choreId: chore.choreId)
-        guard let baseURL = baseURL else { return }
-        AF.request("\(baseURL)/chores", method: .put, parameters: choreRep, encoder: JSONParameterEncoder.default).validate().response { response in
-                debugPrint(response)
-                CoreDataStack.shared.save()
-        }
-    }
+//    func updateChore(chore: Chore, completed: Bool) {
+//        guard let icon = chore.choreIcon,
+//            let label = chore.choreLabel else { return }
+//        chore.choreCompleted = completed
+//        let choreRep = ChoreRepresentation(choreIcon: icon,
+//                                           choreName: label,
+//                                           chorePointValue: chore.chorePointValue,
+//                                           choreCompleted: chore.choreCompleted,
+//                                           choreId: chore.choreId)
+//        guard let baseURL = baseURL else { return }
+//        AF.request("\(baseURL)/chores", method: .put, parameters: choreRep, encoder: JSONParameterEncoder.default).validate().response { response in
+//                debugPrint(response)
+//                CoreDataStack.shared.save()
+//        }
+//    }
     
     // MARK: - Account networking
     
@@ -140,7 +147,11 @@ class ChoreController {
                 let bearer = Bearer(token: loginResponse.token)
                 self.bearer = bearer
                 
-                let user = User(id: loginResponse.userId, familyNameID: loginResponse.familyNameID, username: loginResponse.username, name: loginResponse.name, password: password)
+                let user = User(id: loginResponse.userId,
+                                familyNameID: loginResponse.familyNameID,
+                                username: loginResponse.username,
+                                name: loginResponse.name,
+                                password: password)
                 self.user = user
                 
                 self.assignmentController.fetchAssignmentsFromServer(userId: user.id)

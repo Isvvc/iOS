@@ -29,6 +29,7 @@ class ChoreTabBarViewController: UITabBarController {
                     for vc in navigationVC.viewControllers {
                         if let choreTableVC = vc as? ChoreTableViewController {
                             choreTableVC.choreController = choreController
+                            choreTableVC.delegate = self
                             self.choreTableVC = choreTableVC
                         }
                     }
@@ -69,4 +70,12 @@ class ChoreTabBarViewController: UITabBarController {
         }
     }
 
+}
+
+extension ChoreTabBarViewController: ChoreTableViewDelegate {
+    func updatePoints() {
+        if let pointsVC = pointsVC {
+            pointsVC.updateViews()
+        }
+    }
 }
