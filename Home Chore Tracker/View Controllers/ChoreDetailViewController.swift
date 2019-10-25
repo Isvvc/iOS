@@ -34,7 +34,6 @@ class ChoreDetailViewController: UIViewController {
         guard let chore = chore, let choreLabel = chore.choreLabel else { return }
         title = choreLabel.capitalized
         completedChoreLabel.text = "Have you completed \(choreLabel)?"
-        completedChoreLabel.textColor = .black
         choreImageView.image = UIImage(named: chore.choreIcon ?? "")
         starPoints()
         if chore.choreCompleted {
