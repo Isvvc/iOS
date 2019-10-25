@@ -29,7 +29,8 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViews()
-
+        userNameTextField.delegate = self
+        passwordTextField.delegate = self
     }
     
     func updateViews() {
