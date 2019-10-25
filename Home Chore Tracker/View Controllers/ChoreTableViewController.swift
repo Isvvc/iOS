@@ -98,9 +98,9 @@ class ChoreTableViewController: UITableViewController {
         guard let sectionInfo = fetchedResultsController.sections?[section] else { return nil }
         
         if sectionInfo.name == "0" {
-            return "Not completed"
+            return "Chores Not Completed"
         } else {
-            return "Completed"
+            return "Chores Completed"
         }
     }
     

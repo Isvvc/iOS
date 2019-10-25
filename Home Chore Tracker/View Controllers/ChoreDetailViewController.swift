@@ -10,10 +10,9 @@ import UIKit
 
 class ChoreDetailViewController: UIViewController {
     
-    @IBOutlet weak var completedChoreLabel: UILabel!
+    @IBOutlet private weak var completedChoreLabel: UILabel!
     @IBOutlet private weak var choreImageView: UIImageView!
-    @IBOutlet weak var doneButton: UIButton!
-    @IBOutlet weak var starView: UIView!
+    @IBOutlet private weak var starView: UIView!
     
     var chore: Chore?
     var choreController: ChoreController?
@@ -31,7 +30,7 @@ class ChoreDetailViewController: UIViewController {
     func updateViews() {
         guard let chore = chore, let choreLabel = chore.choreLabel else { return }
         title = choreLabel.capitalized
-        completedChoreLabel.text = "Have you completed \(choreLabel)"
+        completedChoreLabel.text = "Have you completed \(choreLabel)?"
         completedChoreLabel.textColor = .black
         choreImageView.image = UIImage(named: chore.choreIcon ?? "")
         starPoints()

@@ -29,15 +29,17 @@ class ChoreTableViewCell: UITableViewCell {
     
     private func updateViews() {
         
+        let blue = UIColor(red: 0.02, green: 0.33, blue: 0.59, alpha: 1.0)
+        
         if let image = UIImage(named: chore?.choreIcon ?? "") {
             choreImageView.image = image
         }
         choreNameLabel.text = chore?.choreLabel?.capitalized
-        //choreNameLabel.textColor = UIColor(displayP3Red: 5.0, green: 85.0, blue: 150.0, alpha: 1.0)
+        choreNameLabel.textColor = blue
         
         if let points = chore?.chorePointValue {
             pointsLabel.text = "\(points) points"
-            //pointsLabel.textColor = UIColor(displayP3Red: 5.0, green: 85.0, blue: 150.0, alpha: 1.0)
+            pointsLabel.textColor = blue
         }
     }
 
